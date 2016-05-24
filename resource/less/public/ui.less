@@ -1,0 +1,135 @@
+/**
+ * 
+ * @authors JiexiongHu
+ * @description 公用UI控件(表单元素、按钮、图标等)
+ * @important  样式统一前缀  gui-
+ * 注释风格按以下风格
+ */
+
+/*--UI控件1--*/
+
+/*子UI控件1*/
+
+/*--UI控件2--*/
+
+/*子UI控件1*/
+
+/*
+* 按钮等不同尺寸命名的标准：xxxs xxs xs s 默认 mid l xl xxl xxxl
+*/
+
+/*--图标--*/
+.gui-i {
+    display: inline-block;
+
+    &.notice {
+        width: 25px;
+        height: 26px;
+        
+    }
+
+}
+
+/*--按钮--*/
+.gui-btn, .gui-btn:visited {
+    width:100%;
+    font-size: 18px;
+    line-height: 46px;
+    height: 46px;
+    background-color: @color-orange;
+    border:0;
+    color:@color-base;
+    cursor:pointer;
+
+    &:active{
+        background-color: @color-weightorange;
+    }
+}
+
+.button{
+    border-color: #b2b2b2;
+    background-color: #f8f8f8;
+    color: #444;
+    position: relative;
+    display: inline-block;
+    margin: 0;
+    padding: 0 12px;
+    min-width: 52px;
+    min-height: 47px;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 2px;
+    vertical-align: top;
+    text-align: center;
+    text-overflow: ellipsis;
+    font-size: 16px;
+    line-height: 42px;
+    cursor: pointer;
+
+    
+}
+
+.button-position{
+    border-color: #0c60ee;
+    background-color: #387ef5;
+
+    &:active,&:hover{
+        background-color: #0c60ee;
+    }
+}
+
+.input{
+    width: 100%;
+    height: 30px;
+    border:none;
+    padding: 3px 10px;
+}
+
+
+.square{
+    position:absolute;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    width:100px;
+    height:100px;
+    margin:auto;
+    border-radius:10px;
+    color:@color-base;
+    opacity:0.8;
+    background:@color-black;
+}
+
+.circleBtn{
+    display:block;
+    border-radius:50%;
+}
+
+
+
+.icon-btn{
+    width: 35px;
+    text-align: center;
+    border-right: 1px solid #4D4DDC;
+
+    &:hover{
+      background-color:#255DBD;
+    }
+}
+
+.icon-big{
+    font-size:36px!important;
+}
+
+.icon-blue{
+    color:#387ef5;
+
+    &:hover{
+        color: #0c60ee;
+    }
+}
+
+.icon-middle{
+  font-size: 20px !important;
+}
