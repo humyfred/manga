@@ -1,6 +1,5 @@
 'use strict';
-//内容页面的展示情况（隐藏、展示）
-const contentViewState = (state,action) =>{
+const viewContent = (state,action) =>{
   switch(action.type) {
     case 'VIEW_CONTENT':
       return 'md-view show';
@@ -13,4 +12,4 @@ const contentViewState = (state,action) =>{
       return 'md-view hidden';
   }
 }
-export default contentViewState
+export default viewContent
