@@ -1,6 +1,6 @@
 'use strict';
 import React,{Component , PropTypes} from 'react'
-
+import './cartoon-card.scss'
 
 class CartoonCard extends Component {
 

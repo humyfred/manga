@@ -1,7 +1,7 @@
 'use strict';
 import React,{Component , PropTypes} from 'react'
 import CartoonCardList from '../../../containers/cartoon-card/cartoon-card-list'
-import tabs from '../../commons/tabs/tabs'
+import Tabs from '../../commons/tabs/tabs'
 
 class Index extends Component {
 
@@ -14,7 +14,7 @@ class Index extends Component {
         <div>
           <CartoonCardList />
 
-          <tabs />
+          <Tabs />
         </div>
       )
     }

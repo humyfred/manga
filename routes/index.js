@@ -15,30 +15,12 @@ import {
 }
 from 'react-router'
 
-const createRoutes = ( < Route path = "/"
-  component = {
-    App
-  } >
-  < IndexRoute component = {
-    index
-  }
-  /> < Route path = "manga"
-  component = {
-    FrameWrapper
-  }
-  /> < Route path = "cards"
-  component = {
-    CardWrapper
-  }
-  /> < Route path = "about"
-  component = {
-    AddTodo
-  }
-  /> < Route path = "news"
-  component = {
-    SearchTodo
-  }
-  /> < /Route >
+const createRoutes = (
+  < Route path = "/" component = { App } >
+  < IndexRoute component = { index }/>
+  < Route path = "manga" component = { index }/>
+  < Route path = "cards" component = { CardWrapper }/>
+  < /Route >
 )
 
 

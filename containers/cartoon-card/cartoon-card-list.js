@@ -8,8 +8,8 @@ import { browserHistory } from 'react-router'
 
 const mapStateToProps = (state) => {
   return {
-    CartoonCards: state.CartoonCardList ,
-    viewListState :state.viewListState
+    CartoonCards: state.cartoonCardList ,
+    indexViewState :state.indexViewState
   }
 }
 
@@ -18,9 +18,6 @@ const mapDispatchToProps = (dispatch) => {
     onTodoClick: (id) => {
       //browserHistory.push('manga/viewDetail');
       dispatch(toViewDetail(id));
-    },
-    goBack: () => {
-       //browserHistory.goBack();
     }
   }
 }

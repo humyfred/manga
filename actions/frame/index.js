@@ -4,7 +4,7 @@ action types
 
 export const toViewDetail = ()  =>{
   return{
-    type:'FRAME_VIEWDETAIL'
+    type:'VIEW_CONTENT'
   }
 
 }
@@ -12,9 +12,7 @@ export const toViewDetail = ()  =>{
 
 export const toViewList = ()  =>{
   return{
-    type:'FRAME_VIEWLIST'
+    type:'NO_VIEW_CONTENT'
   }
 
 }
-
-
