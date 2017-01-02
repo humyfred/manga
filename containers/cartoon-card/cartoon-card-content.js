@@ -14,7 +14,7 @@ const mapStateToProps = (state) => {
     loadState = '';
   }
   return {
-    viewDetailState: state.viewDetailState,
+    contentViewState: state.contentViewState,
     viewDetailImgs:state.viewDetailImgs,
     title:'我的帖子',
     loadState:loadState
