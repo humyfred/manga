@@ -7,7 +7,7 @@ class CartoonCardList extends Component {
 
   render(){
     return (
-      <section className={this.props.indexViewState} >
+      <section className={this.props.indexViewState+' jx-bottom-50'} >
         {this.props.CartoonCards.map(cartoonCard =>
           <CartoonCard
             key = {cartoonCard.id}
