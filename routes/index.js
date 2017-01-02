@@ -6,7 +6,7 @@ import VisibleCards from '../containers/VisibleCards'
 import VisibleFrames from '../containers/VisibleFrames'
 import Home from '../components/Home'
 import Nav from '../components/Nav'
-import tabs from '../components/commons/tabs/tabs'
+import index from '../components/modules/index/index'
 import FrameWrapper from '../components/FrameWrapper'
 import CardWrapper from '../components/CardWrapper'
 
@@ -20,7 +20,7 @@ const createRoutes = ( < Route path = "/"
     App
   } >
   < IndexRoute component = {
-    tabs
+    index
   }
   /> < Route path = "manga"
   component = {
