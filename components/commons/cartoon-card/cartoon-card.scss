@@ -1,28 +1,16 @@
 
-.jx-cardWrapper{
-	height: 45px;
-	padding: 10px 12px;
-	border-top: 1px solid @color-border;
-	&:nth-child(1){
-		border-top: none;
-	}
-	&:active{
-		background-color: @color-background-active;
-	}
-	.avatar{
-		width: 40px;
-    height: 40px;
-    margin-right: 12px;
+.jx-card{
+	width:50%;
+	margin:10px auto;
+	border: 1px solid #ddd;
+	border-radius: 4px;
+	.jx-card-avator{
+		display:block;
+		height:200px;
 	}
 
-	.cardName{
-		display: inline-block;
-	}
-
-	.title{
-		display: block;
-	}
-	.other{
-		color:@color-font-primary;
+	.jx-card-title{
+		padding: 12px 0;
+		text-align:center;
 	}
 }

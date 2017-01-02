@@ -10,12 +10,12 @@ const FrameList = ({frames,viewListState,onTodoClick,goBack}) =>(
       <span className='ml15'>漫画</span>
     </header>
     <div className='content mt48'>
-      
+
       {frames.map(frame =>
         <Frame
           key = {frame.id}
           {...frame}
-  
+
           onClick={() =>onTodoClick(frame.title)}
         />
       )}
