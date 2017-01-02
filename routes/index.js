@@ -19,7 +19,8 @@ const createRoutes = (
   < Route path = "/" component = { App } >
   < IndexRoute component = { index }/>
   < Route path = "manga" component = { index }/>
-  < Route path = "cards" component = { CardWrapper }/>
+  < Route path = "post" component = { CardWrapper }/>
+  < Route path = "me" component = { CardWrapper }/>
   < /Route >
 )
 

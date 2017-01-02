@@ -6,7 +6,7 @@ import Loading from '../Loading/loading'
 const ContentWrap extends Component {
   render(){
     return (
-      <section className={this.props.viewDetailState} style={{background:'#fff'}}>
+      <section className={this.props.contentViewState} style={{background:'#fff'}}>
         <header className='header flex vertical-middle'>
           <i className='iconfont icon-btn icon-back icon-middle' onClick={() =>this.props.onClick()}></i>
           <span className='ml15'>{this.props.title}</span>
@@ -24,7 +24,7 @@ const ContentWrap extends Component {
 
 ContentWrap.propTypes = {
 
-   viewDetailState:PropTypes.string.isRequired,
+   contentViewState:PropTypes.string.isRequired,
 }
 
 
