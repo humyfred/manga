@@ -14,76 +14,11 @@
 
 /*子模块1*/
 
-/*--公用广告--*/
-.md-frameWrapper{
-	width:50%;
-	margin:10px auto;
-	border: 1px solid #ddd;
-	border-radius: 4px;
-}
-
-.md-frameWrapper-title{
-	padding: 12px 0;
-	text-align:center;
-}
-
-.md-frameWrapper-avator{
-	display:block;
-	height:200px;
-}
-
-.md-nav{
-	li{
-		float:left;
-		width:33.3%;
-		height:75px;
-    	text-align: center;
-
-    	&:active{
-    		background-color:@color-gray;
-    	}
-	}
-}
-
 /**
  *	Css3动画
  *
  */
-.md-view {
-	position:absolute;
-	top:0;
-	bottom:0;
-	left:0;
-	right:0;
-	overflow:auto;
 
-	&.hidden{
-		transform: translate3d(100%,0,0);
-		// opacity:0;
-		// -webkit-transition-property: opacity 300ms;
-		-webkit-transition: -webkit-transform 300ms cubic-bezier(0.42, 0, 0.58, 1.0) 0.1s;
-        -ms-transition: transform 300ms cubic-bezier(0.42, 0, 0.58, 1.0) 0.1s;
-        // -ms-transition-property: opacity 300ms ;
-	}
-
-	&.show{
-		transform: translate3d(0,0,0);
-		// opacity:1;
-		// -webkit-transition-property: opacity 400ms;
-		-webkit-transition: -webkit-transform 400ms cubic-bezier(0.42, 0, 0.58, 1.0) 0.1s;
-        -ms-transition: transform 400ms cubic-bezier(0.42, 0, 0.58, 1.0) 0.1s;
-        // -ms-transition-property: opacity 400ms;
-	}
-
-	&.under{
-		transform: translate3d(-33%,0,0);
-		// opacity:0.9;
-		// -webkit-transition-property: opacity 400ms;
-		-webkit-transition: -webkit-transform 400ms cubic-bezier(0.42, 0, 0.58, 1.0);
-        -ms-transition: transform 400ms cubic-bezier(0.42, 0, 0.58, 1.0);
-        // -ms-transition-property: opacity 400ms ;
-	}
-}
 
 
 .md-cardWrapper{
@@ -133,8 +68,4 @@
 
 .card-detail{
 
-}
-
-.jx-bottom-50{
-	bottom: 50px;
 }
