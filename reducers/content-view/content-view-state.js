@@ -2,14 +2,14 @@
 const viewContent = (state,action) =>{
   switch(action.type) {
     case 'VIEW_CONTENT':
-      return 'md-view show';
+      return 'jx-view jx-view__show';
       break;
     case 'NO_VIEW_CONTENT':
-      return 'md-view hidden';
+      return 'jx-view jx-view__hidden';
 
       break;
     default:
-      return 'md-view hidden';
+      return 'jx-view jx-view__hidden';
   }
 }
 export default viewContent

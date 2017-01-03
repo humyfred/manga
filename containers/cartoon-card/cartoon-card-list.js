@@ -16,7 +16,6 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     onTodoClick: (id) => {
-      //browserHistory.push('manga/viewDetail');
       dispatch(toViewDetail(id));
     }
   }

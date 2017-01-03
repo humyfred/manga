@@ -3,14 +3,14 @@
 const indexViewState = (state,action) =>{
   switch(action.type) {
     case 'VIEW_CONTENT':
-      return 'md-view under';
+      return 'jx-view jx-view__under';
       break;
     case 'NO_VIEW_CONTENT':
-      return 'md-view show';
+      return 'jx-view jx-view__show';
 
       break;
     default:
-      return 'md-view show';
+      return 'jx-view jx-view__show';
   }
 }
 
