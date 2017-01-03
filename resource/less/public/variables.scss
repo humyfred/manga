@@ -1,0 +1,55 @@
+/**
+ * 公用变量
+ * @author	JiexiongHu(胡杰雄)
+ */
+
+/*-- 基础颜色规范（以颜色值命名） --*/
+$color-base: #FFF;
+$color-blue:#387ef5;
+$color-gray: #e5e5e5; /* 灰色 */
+$color-midgray:#6d6458;/* 中灰色 */
+$color-lightgray: #B4B4B4; /* 浅灰色 */
+$color-black:#3d4245;
+$color-red: #6f2a00; /* 红色 */
+$color-green: #6abb22; /* 绿色 */
+$color-yellow: #ffb423; /* 黄色 */
+$color-orange: #FF9701; /* 橙色 */
+$color-weightorange:#DC8201;/* 深橙色 */
+$color-black: #000000; /* 黑色 */
+$color-background:#f2f2f2;
+$color-lightpink:#e8e7e7;/* 淡粉色 */
+/*-- 颜色值具体使用场景：color-使用的元素-使用的场景，如color-input-hover --*/
+$color-input-placeholder: #ccc;
+/*链接*/
+$color-link: $color-black;
+$color-link-em: $color-red;
+$color-link-active-bg: #f2f2f2;
+
+$color-border: #ccc;
+$color-font: #b4b4b4;
+$color-font-primary:#9e78c0;
+$color-background-active:#E2E0E0;
+/*--字体--*/
+$font-family-base: "Helvetica Neue", Helvetica, "Hiragino Sans GB W6", "Heiti SC", "Microsoft Yahei";
+$font-family: 'Hiragino Sans GB W6';
+
+/*--图片地址--*/
+$img: '../../img';
+$pic: '../pic';
+
+/*--media--*/
+//$lte-5s: ~'screen and (max-width: 320px)';
+
+/*--z-index--*/
+$header-zi: 300;
+$footer-zi: 300;
+$index-hd-zi: 300;
+$order-zi: 399;
+$comment-zi: 400;
+$mask-zi: 800;
+$pic-view-zi: 801;
+$filter-zi: 801;
+$share-zi: 801;
+$pay-popup-zi: 900;
+$popup-zi: 900;
+$menu-zi: 900;
