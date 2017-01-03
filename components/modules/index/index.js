@@ -1,19 +1,20 @@
 'use strict';
-import React,{Component , PropTypes} from 'react'
-import CartoonCardList from '../../../containers/cartoon-card/cartoon-card-list'
-import Tabs from '../../commons/tabs/tabs'
+import React,{Component , PropTypes} from 'react';
+import CartoonCardList from '../../../containers/cartoon-card/cartoon-card-list';
+import ContentWrap from '../../../containers/content-wrap/content-wrap';
+import Tabs from '../../commons/tabs/tabs';
 
 class Index extends Component {
 
     constructor(props){
-      super(props)
+      super(props);
     }
 
     render(){
       return (
         <div>
           <CartoonCardList />
-
+          <ContentWrap />
           <Tabs />
         </div>
       )

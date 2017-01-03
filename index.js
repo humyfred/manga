@@ -8,7 +8,7 @@ import { syncHistoryWithStore } from 'react-router-redux'
 import reducers from './reducers'
 import routes from './routes'
 //import './resource/css/build/global.css'
-import './resource/less/build/global.less'
+import './resource/less/build/global.scss'
 
 
 let store = createStore(reducers, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())

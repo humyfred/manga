@@ -1,0 +1,14 @@
+.loading{
+    position:absolute;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    width:100px;
+    height:100px;
+    margin:auto;
+    border-radius:10px;
+    color:@color-base;
+    opacity:0.8;
+    background:@color-black;
+}
