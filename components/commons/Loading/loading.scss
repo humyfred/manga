@@ -1,4 +1,4 @@
-.loading{
+.jx-loading{
     position:absolute;
     top:0;
     bottom:0;
@@ -6,9 +6,11 @@
     right:0;
     width:100px;
     height:100px;
+    text-align: center;
+    padding: 9px;
     margin:auto;
     border-radius:10px;
-    color:@color-base;
+    color:#fff;
     opacity:0.8;
-    background:@color-black;
+    background:#000;
 }
