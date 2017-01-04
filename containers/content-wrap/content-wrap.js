@@ -8,14 +8,10 @@ import { browserHistory } from 'react-router'
 
 
 const mapStateToProps = (state) => {
-  var content = {title:'',content:''};
-  if(state.content==='view_cartoon'){
-    content = {title:'海贼王',content:''};
-  }
+
   return {
     contentViewState: state.contentViewState ,
-    title :content.title,
-    content:state.content,
+    content:state.content.obj,
     loadState:'hide'
   }
 }
