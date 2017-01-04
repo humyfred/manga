@@ -12,7 +12,7 @@ class CartoonCardList extends Component {
           <CartoonCard
             key = {cartoonCard.id}
             {...cartoonCard}
-            onClick={() =>this.props.onTodoClick(cartoonCard.title)}
+            onClick={() =>this.props.detail(cartoonCard)}
             />
         )}
       </section>
@@ -28,7 +28,7 @@ CartoonCardList.propTypes = {
       title: PropTypes.string.isRequired
   }).isRequired).isRequired,
     indexViewState:PropTypes.string.isRequired,
-    onTodoClick: PropTypes.func.isRequired
+    detail: PropTypes.func.isRequired
 }
 
 

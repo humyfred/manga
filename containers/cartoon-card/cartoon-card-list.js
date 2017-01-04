@@ -1,6 +1,7 @@
 'use strict';
 import { connect } from 'react-redux'
-import { toViewDetail } from '../../actions/frame'
+import { toViewCartoon } from '../../actions/cartoon-card'
+import { toViewDetail } from '../../actions/commons';//转换场景
 import CartoonCards from '../../components/commons/cartoon-card-list/cartoon-card-list'
 import { browserHistory } from 'react-router'
 
@@ -15,8 +16,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    onTodoClick: (id) => {
-      dispatch(toViewDetail(id));
+    detail: (obj) => {
+      dispatch(toViewCartoon(obj));
     }
   }
 }

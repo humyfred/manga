@@ -3,12 +3,12 @@
 const indexViewState = (state,action) =>{
   switch(action.type) {
     case 'VIEW_CONTENT':
+    case 'CARTOON_CONTENT':
+    case 'POST_CONTENT':
+    case 'ME_CONTENT':
       return 'jx-view jx-view__under';
-      break;
     case 'NO_VIEW_CONTENT':
       return 'jx-view jx-view__show';
-
-      break;
     default:
       return 'jx-view jx-view__show';
   }

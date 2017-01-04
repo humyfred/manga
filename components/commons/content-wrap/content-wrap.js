@@ -1,7 +1,7 @@
 'use strict';
 import React,{ Component , PropTypes} from 'react'
 import Loading from '../Loading/Loading'
-import { back } from './content-wrap-action.js'
+import { view } from './content-wrap-action.js'
 import './content-wrap.scss'
 
 
@@ -14,14 +14,14 @@ class ContentWrap extends Component {
 
   render(){
     return (
-      <section className={this.props.contentViewState} style={{background:'#fff'}}>
-        <header className='header flex vertical-middle'>
+      <section className={this.props.contentViewState+' jx-content-wrap'} style={{background:'#fff'}}>
+        <header className='jx-content-header flex vertical-middle'>
           <a className="icon-btn " onClick={()=>this.props.back()} ><i className='iconfont icon-back icon-middle' ></i></a>
-          <span className='ml15'>{this.props.title}</span>
+          <span className='ml15 jx-content-title'>{this.props.content.title}</span>
         </header>
 
-        <div className='content mt48'>
-            {this.props.content}
+        <div className='jx-content'>
+            {view()}
         </div>
         <Loading showState={this.props.loadState}/>
       </section>
@@ -32,8 +32,7 @@ class ContentWrap extends Component {
 
 ContentWrap.propTypes = {
    contentViewState:PropTypes.string.isRequired,
-   title: PropTypes.string.isRequired,
-   content: PropTypes.string.isRequired
+   content: PropTypes.object.isRequired
 }
 
 
