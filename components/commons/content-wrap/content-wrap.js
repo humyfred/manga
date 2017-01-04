@@ -11,15 +11,12 @@ class ContentWrap extends Component {
     super(props);
   }
 
-  back(){
-    this.props.dispatch( back() )
-  }
 
   render(){
     return (
       <section className={this.props.contentViewState} style={{background:'#fff'}}>
         <header className='header flex vertical-middle'>
-          <a className="icon-btn " onClick={()=>this.back()} ><i className='iconfont icon-back icon-middle' ></i></a>
+          <a className="icon-btn " onClick={()=>this.props.back()} ><i className='iconfont icon-back icon-middle' ></i></a>
           <span className='ml15'>{this.props.title}</span>
         </header>
 
