@@ -11,7 +11,7 @@ const mapStateToProps = (state) => {
 
   return {
     contentViewState: state.contentViewState ,
-    content:state.content.obj,
+    contentWrap:state.contentWrap,
     loadState:'hide'
   }
 }
