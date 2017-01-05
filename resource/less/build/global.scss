@@ -4,6 +4,7 @@
 html{*overflow-y:auto;}
 html,body{-webkit-text-size-adjust:none;}
 *{margin:0;padding:0;box-sizing: border-box;}
+a{ -webkit-tap-highlight-color:transparent;}
 button{overflow: visible;}/*解决button内元素绝对定位错误的问题*/
 table{border-collapse:collapse;border-spacing:0}
 fieldset,img{border:0}

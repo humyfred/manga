@@ -9,7 +9,15 @@ class CartoonCardContent extends Component {
     }
 
     render(){
-      
+      return (
+          <div>
+          {
+            this.props.imgs.map(
+                img => <img key={img} src={img}/>
+              )
+          }
+          </div>
+      )
     }
 
 }

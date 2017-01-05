@@ -2,11 +2,12 @@
 action types
 */
 import React from 'react'
+import CartoonCardContent from '../cartoon-card-content/cartoon-card-content'
 
 const cartoonView = (content)  =>{
-  return content.imgs.map(
-      img => <img key={img} src={img}/>
-    );
+  return (
+    <CartoonCardContent imgs={content.imgs} />
+  );
 
 }
 
@@ -21,13 +22,13 @@ const meView = (content)  =>{
       img => <img src={img}/>
     );
 }
-export const view = (content)  =>{
-  if(content.type==='CARTOON_CONTENT'){
-   return  cartoonView(content.content);
-  }else if(content.type==='POST_CONTENT'){
-   return  postView(content.content);
-  }else if(content.type==='ME_CONTENT'){
-   return  meView(content.content);
+export const view = (contentWrap)  =>{
+  if(contentWrap.type==='CARTOON_CONTENT'){
+   return  cartoonView(contentWrap.content);
+ }else if(contentWrap.type==='POST_CONTENT'){
+   return  postView(contentWrap.content);
+ }else if(contentWrap.type==='ME_CONTENT'){
+   return  meView(contentWrap.content);
   }else{
     return '';
   }
