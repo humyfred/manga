@@ -4,9 +4,13 @@
 	margin:10px auto;
 	border: 1px solid #ddd;
 	border-radius: 4px;
+	&:active{
+		box-shadow: 0 0 8px #9c9c9c;
+	}
 	.jx-card-avator{
 		display:block;
 		height:200px;
+		overflow: hidden;
 	}
 
 	.jx-card-title{
