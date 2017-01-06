@@ -14,7 +14,8 @@ class Post extends Component {
             <img className='post-avatar' src={this.props.imgSrc}/>
             <div className='post-content'>
               <span className='post-title'>{this.props.title}</span>
-              <span className='post-other'>{this.props.reply}/{this.props.views}</span>
+              <span className='post-reply'>{this.props.reply}/</span> <span className='post-views'>{this.props.views}</span>
+              <span className="post-time">6小时前</span>
             </div>
         </div>
       )

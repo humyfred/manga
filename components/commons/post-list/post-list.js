@@ -26,8 +26,8 @@ PostList.propTypes = {
     posts:PropTypes.arrayOf(PropTypes.shape({
       imgSrc: PropTypes.string.isRequired,
       title: PropTypes.string.isRequired,
-      reply: PropTypes.string.isRequired,
-      views: PropTypes.string.isRequired
+      reply: PropTypes.number.isRequired,
+      views: PropTypes.number.isRequired
   }).isRequired).isRequired,
     indexViewState:PropTypes.string.isRequired,
     detail: PropTypes.func.isRequired

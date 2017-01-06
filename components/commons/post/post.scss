@@ -1,6 +1,7 @@
 .jx-post-wrap{
-	height: 45px;
-	padding: 10px 12px;
+	position: relative;
+	height: 60px;
+	padding: 8px 12px;
 	border-top: 1px solid #ccc;
 	&:first-child{
 		border-top: none;
@@ -9,8 +10,8 @@
 		background-color: #E2E0E0;
 	}
 	.post-avatar{
-		width: 40px;
-    height: 40px;
+		width: 45px;
+    height: 45px;
     margin-right: 12px;
 	}
 
@@ -20,9 +21,19 @@
 
 	.post-title{
 		display: block;
-
+		margin-bottom: 9px;
 	}
-	.post-other{
-		color: #9e78c0;
+	.post-reply{
+		color : #9e78c0;
+	}
+
+	.post-views{
+		color : #99A9BF;
+	}
+
+	.post-time{
+		position: absolute;
+		bottom: 1px;
+		right: 10px;
 	}
 }
