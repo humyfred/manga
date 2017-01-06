@@ -25,17 +25,17 @@ class tabs extends Component {
     return (
       <ul className = "jx-tabs" >
         <li className={ this.activeTab=='manga' ? 'active':'' }>
-          <Link to="#/manga">
+          <Link to="/manga">
             <i className = "iconfont icon-svgmoban67" ></i><span className="jx-tab-name">漫画</span>
           </Link>
         </li>
         <li className={ this.activeTab=='post' ? 'active':'' }>
-          <Link to="#/post">
+          <Link to="/post">
             <i className = "iconfont icon-pinglun" > </i><span className="jx-tab-name">帖子</span>
           </Link>
         </li>
         <li className={ this.activeTab=='me' ? 'active':'' }>
-          <Link to="#/me">
+          <Link to="/me">
            <i className = "iconfont icon-wo" > </i><span className="jx-tab-name">我</span>
           </Link>
         </li>
