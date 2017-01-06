@@ -1,0 +1,28 @@
+.jx-post-wrap{
+	height: 45px;
+	padding: 10px 12px;
+	border-top: 1px solid #ccc;
+	&:first-child{
+		border-top: none;
+	}
+	&:active{
+		background-color: #E2E0E0;
+	}
+	.post-avatar{
+		width: 40px;
+    height: 40px;
+    margin-right: 12px;
+	}
+
+	.post-content{
+		display: inline-block;
+	}
+
+	.post-title{
+		display: block;
+
+	}
+	.post-other{
+		color: #9e78c0;
+	}
+}
