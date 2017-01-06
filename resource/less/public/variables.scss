@@ -5,6 +5,7 @@
 
 /*-- 基础颜色规范（以颜色值命名） --*/
 $color-base: #FFF;
+$color-text: #5e6d82;
 $color-blue:#387ef5;
 $color-gray: #e5e5e5; /* 灰色 */
 $color-midgray:#6d6458;/* 中灰色 */
@@ -21,7 +22,7 @@ $color-lightpink:#e8e7e7;/* 淡粉色 */
 /*-- 颜色值具体使用场景：color-使用的元素-使用的场景，如color-input-hover --*/
 $color-input-placeholder: #ccc;
 /*链接*/
-$color-link: $color-black;
+$color-link: #5e6d82;
 $color-link-em: $color-red;
 $color-link-active-bg: #f2f2f2;
 
