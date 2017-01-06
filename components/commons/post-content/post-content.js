@@ -10,16 +10,24 @@ class PostContent extends Component {
 
     render(){
       return (
-          <div>
-            <div className='jx-post-content__header'>
-              <div className="jx-post"></div>
-              <div className="jqbibWgUvFUt5sVWIJVOx5AroyURST6wGOGMJKcGkVZDkhCSvkP8SCVmskCtTEkJZoSgepoM9TmeS8uKpjo9aWTLRAYWA1RwoCh4EOuHZZPv2i1KYq784MTo7J3AWdyFBQpzAHYTcG3Rza5jGFEFOAzUkiijDv8A34evwNfgqofl"></div>
+          <div className="jx-postContent">
+            <div className='jx-postContent__hd'>
+              <div className="jx-postContent-banner">
+                <img src={this.props.bannerUrl}/>
+              </div>
+              <div className="jx-postContent-title">{this.props.title}</div>
+              <div className="jx-postContent-author">
+                <img src={this.props.author.avator} className="jx-postContent-author__avator"/>
+                <div className="jx-postContent-author__infor">
+                  <span className="jx-postContent-author-name">{this.props.author.name}</span>
+                  <span className="jx-postContent-author-time">{this.props.time}</span>
+                </div>
+              </div>
             </div>
-          {
-            this.props.imgs.map(
-                img => <img key={img} src={img}/>
-              )
-          }
+
+            <div className="jx-postContent__bd">
+              {this.props.content}
+            </div>
           </div>
       )
     }

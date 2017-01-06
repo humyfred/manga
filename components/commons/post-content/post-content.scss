@@ -1,3 +1,50 @@
-.jx-post-content-wrap{
-  
+.jx-postContent{
+  margin: 14px 5px;
+  border-radius: 4px;
+  background: white;
+
+  .jx-postContent__hd{
+    padding: 10px;
+  }
+
+  .jx-postContent__bd{
+    padding: 10px;
+    border-top: 1px solid #e5e5e5;
+  }
+}
+
+.jx-postContent-banner{
+  width: 100%;
+  height:200px;
+  overflow: hidden;
+}
+
+.jx-postContent-title{
+  padding: 14px 0;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.jx-postContent-author{
+  padding: 0 4px;
+  .jx-postContent-author__avator{
+    width: 32px;
+    height: 32px;
+    margin-right: 15px;
+    border-radius: 50%;
+  }
+
+  .jx-postContent-author__infor{
+    display: inline-block;
+  }
+}
+
+
+.jx-postContent-author-name{
+  display: block;
+}
+
+.jx-postContent-author-time{
+  display: block;
+  color: #99A9BF;
 }
