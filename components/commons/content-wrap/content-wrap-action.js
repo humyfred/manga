@@ -3,6 +3,7 @@ action types
 */
 import React from 'react'
 import CartoonCardContent from '../cartoon-card-content/cartoon-card-content'
+import PostContent from '../post-content/post-content'
 
 const cartoonView = (content)  =>{
   return (
@@ -12,9 +13,9 @@ const cartoonView = (content)  =>{
 }
 
 const postView = (content)  =>{
-  return content.imgs.map(
-      img => <img src={img}/>
-    );
+  return (
+    <PostContent {...content} />
+  )
 }
 
 const meView = (content)  =>{

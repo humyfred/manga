@@ -19,7 +19,7 @@ class ContentWrap extends Component {
   render(){
     this.loadState = 'show';
     return (
-      <section className={this.props.contentViewState+' jx-content-wrap'} style={{background:'#fff'}}>
+      <section className={this.props.contentViewState+' jx-content-wrap'} style={{background:'#f2f2f2'}}>
         <header className='jx-content-header flex vertical-middle'>
           <a className="icon-btn " onClick={()=>this.props.back()} ><i className='iconfont icon-back icon-middle' ></i></a>
           <span className='ml15 jx-content-title'>{this.props.contentWrap.content.title}</span>
