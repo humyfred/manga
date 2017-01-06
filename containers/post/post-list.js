@@ -7,7 +7,7 @@ import Posts from '../../components/commons/post-list/post-list'
 
 const mapStateToProps = (state) => {
   return {
-    PostList: state.cartoonCardList ,
+    posts: state.postList ,
     indexViewState :state.indexViewState
   }
 }

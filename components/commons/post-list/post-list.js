@@ -9,7 +9,7 @@ class PostList extends Component {
     return (
       <section className={this.props.indexViewState+' jx-bottom-50'} >
         {this.props.posts.map(post =>
-          <CartoonCard
+          <Post
             key = {post.id}
             {...post}
             onClick={() =>this.props.detail(post)}
