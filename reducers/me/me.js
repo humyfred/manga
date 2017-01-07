@@ -9,7 +9,7 @@ const me = (state = [], action) => {
         me:{
           avator:'https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=1740907959,1531109126&fm=23&gp=0.jpg',
           name:'小熊',
-          autograph:'。。。。。'
+          autograph:'多情自古伤离别'
         },
         tabContent:'1111'
       };

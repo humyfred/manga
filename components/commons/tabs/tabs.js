@@ -34,7 +34,7 @@ class tabs extends Component {
             <i className = "iconfont icon-pinglun" > </i><span className="jx-tab-name">帖子</span>
           </Link>
         </li>
-        <li className={ this.activeTab=='me' ? 'active':'' }>
+        <li className={ this.activeTab=='me' ? 'active':'' } >
           <Link to="/me" >
            <i className = "iconfont icon-wo" > </i><span className="jx-tab-name">我</span>
           </Link>
