@@ -35,7 +35,7 @@ class tabs extends Component {
           </Link>
         </li>
         <li className={ this.activeTab=='me' ? 'active':'' }>
-          <Link to="/me">
+          <Link to="/me" >
            <i className = "iconfont icon-wo" > </i><span className="jx-tab-name">我</span>
           </Link>
         </li>

@@ -82,7 +82,26 @@ sub{vertical-align:text-bottom}
 	}
 }
 
+.jx-button{
+  background: #fff;
+  border: 1px solid #c0ccda;
+  color: #1f2d3d;
+  -webkit-appearance: none;
+  text-align: center;
+  outline: none;
+  margin: 0;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  padding: 10px 30px;
+  font-size: 14px;
+  border-radius: 4px;
 
+  &:active{
+    color: #20a0ff;
+    border-color: #20a0ff;
+  }
+}
 @import "../public/layout.scss";
 // /** icon  */
 @import "../public/icon.scss";
