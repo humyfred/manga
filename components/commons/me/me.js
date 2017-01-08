@@ -1,6 +1,7 @@
 'use strict';
 import React,{ Component , PropTypes} from 'react'
 import { Link, browserHistory } from 'react-router'
+import TabNav from '../tab-nav/tab-nav'
 import './me.scss'
 
 
@@ -28,24 +29,15 @@ class Me extends Component {
         </div>
 
         <div className="jx-me__action">
-          <button className='jx-button'><Link to="/me/setting">设置</Link></button>
+          <button className='jx-button'><Link to="me/setting">设置</Link></button>
         </div>
       </div>
+      <TabNav nav={this.props.nav} tabContent={this.props.tabContent}
+              toViewSubscribe={this.props.toViewSubscribe}
+              toViewPost={this.props.toViewPost}
+              toViewLike={this.props.toViewLike}
+      />
 
-      <ul className="jx-tab-nav cf">
-        <li className="jx-tab-nav-item jx-tab-nav-item_active">
-          订阅的漫画
-        </li>
-        <li className="jx-tab-nav-item">
-          发的帖子
-        </li>
-        <li className="jx-tab-nav-item">
-          我点的赞
-        </li>
-      </ul>
-      <div className="jx-tab-nav-content">
-        {this.props.tabContent}
-      </div>
       </div>
     )
   }
