@@ -29,7 +29,7 @@ class Me extends Component {
         </div>
 
         <div className="jx-me__action">
-          <button className='jx-button'><Link to="me/setting">设置</Link></button>
+          <button className='jx-button'><Link to="/me/setting">设置</Link></button>
         </div>
       </div>
       <TabNav nav={this.props.nav} tabContent={this.props.tabContent}
@@ -38,7 +38,10 @@ class Me extends Component {
               toViewLike={this.props.toViewLike}
       />
 
+      {/* will render `user-infor.js` when at /me/setting */}
+      {this.props.children}
       </div>
+
     )
   }
 }
