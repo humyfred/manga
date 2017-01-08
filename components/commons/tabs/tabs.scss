@@ -12,10 +12,8 @@
     &:last-child{
       border-right: 0;
     }
-    &:active,&.active{
-      a{
-        color: #20A0FF;
-      }
+    a.active{
+      color: #20A0FF;
     }
 
     .jx-tab-name{
