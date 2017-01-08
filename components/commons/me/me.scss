@@ -23,30 +23,3 @@
     margin-top: 15px;
   }
 }
-
-
-.jx-tab-nav{
-  margin: 0 8px;
-  background: white;
-  text-align: center;
-}
-
-.jx-tab-nav-item{
-    width: 33.3%;
-    float: left;
-    padding: 10px 20px;
-    height: 45px;
-    border-bottom: 3px solid transparent;
-    &.jx-tab-nav-item_active{
-      color: #20a0ff;
-      border-bottom: 3px solid #20a0ff;
-      transition: border-color .3s,background-color .3s,color .3s;
-    }
-}
-
-
-.jx-tab-nav-content{
-  padding: 20px 10px;
-  margin: 0 8px;
-  background: white;
-}
