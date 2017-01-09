@@ -2,19 +2,19 @@
 import { connect } from 'react-redux';
 import { toViewDetail, toViewList } from '../../actions/commons';
 import userInfor from '../../components/commons/user-infor/user-infor';
-
+import { browserHistory } from 'react-router'
 
 
 const mapStateToProps = (state) => {
 
-  return {me:state.me.me,tabContent:state.me.tabContent};
+  return {userInfor:state.userInfor};
 };
 
 
 const mapDispatchToProps = (dispatch) => {
   return {
     back: () => {
-      dispatch(toViewList());
+      browserHistory.goBack();
     }
   };
 };
