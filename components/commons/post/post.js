@@ -23,7 +23,7 @@ class Post extends Component {
 
               <div className='jx-post__pictures'>
                 {this.props.pictures.map( pic =>
-                    <img src={pic} id={pic}/>
+                    <img src={pic} key={pic}/>
                 )}
               </div>
             </div>
