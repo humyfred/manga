@@ -24,7 +24,6 @@ class PostList extends Component {
 
 PostList.propTypes = {
     posts:PropTypes.arrayOf(PropTypes.shape({
-      imgSrc: PropTypes.string.isRequired,
       title: PropTypes.string.isRequired,
       reply: PropTypes.number.isRequired,
       views: PropTypes.number.isRequired
