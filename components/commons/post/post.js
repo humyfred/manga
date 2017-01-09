@@ -11,12 +11,34 @@ class Post extends Component {
     render(){
       return (
         <div className='jx-post-wrap' onClick={this.props.onClick}>
-            <img className='post-avatar' src={this.props.imgSrc}/>
-            <div className='post-content'>
-              <span className='post-title'>{this.props.title}</span>
-              <span className='post-reply'>{this.props.reply}/</span> <span className='post-views'>{this.props.views}</span>
-              <span className="post-time">6小时前</span>
+          <div className='jx-post'>
+            <div className='jx-post__title'>
+                {this.props.title}
             </div>
+
+            <div className="jx-post__content">
+              <div className='jx-post__summary'>
+                {this.props.summary}
+              </div>
+
+              <div className='jx-post__pictures'>
+                {this.props.pictures.map( pic =>
+                    <img src={pic} id={pic}/>
+                )}
+              </div>
+            </div>
+          </div>
+          <div className="jx-post-author">
+            <img className='jx-post-author__avatar' src={this.props.author.avator}/>
+            <div className='jx-post-author__infor'>
+              <span className='jx-post-author__name'>{this.props.author.name}</span>
+              <span className="jx-post-time">6小时前</span>
+            </div>
+            <div className="jx-post__infor">
+              <a><i className="iconfont icon-like"></i>{this.props.reply}</a>
+              <a><i className="iconfont icon-comment"></i>{this.props.views}</a>
+            </div>
+          </div>
         </div>
       )
     }

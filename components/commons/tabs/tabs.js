@@ -20,7 +20,7 @@ class tabs extends Component {
         </li>
         <li>
           <Link to="/post" activeClassName="active">
-            <i className = "iconfont icon-pinglun" > </i><span className="jx-tab-name">帖子</span>
+            <i className = "iconfont icon-post" > </i><span className="jx-tab-name">帖子</span>
           </Link>
         </li>
         <li>
