@@ -5,6 +5,7 @@ const viewContent = (state,action) =>{
     case 'CARTOON_CONTENT':
     case 'POST_CONTENT':
     case 'ME_CONTENT':
+    case 'REQUEST_POSTS':
       return 'jx-view jx-view__show';
     case 'NO_VIEW_CONTENT':
       return 'jx-view jx-view__hidden';

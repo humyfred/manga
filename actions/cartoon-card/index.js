@@ -6,10 +6,10 @@ import fetch from 'isomorphic-fetch'
 const REQUEST_POSTS = 'REQUEST_POSTS'
 const RECEIVE_POSTS = 'RECEIVE_POSTS'
 
-function requestPosts(subreddit) {
+function requestPosts(cartoon) {
   return {
     type: REQUEST_POSTS,
-    subreddit
+    title: cartoon.title
   }
 }
 
@@ -22,12 +22,15 @@ function receivePosts(subreddit, json) {
   }
 }
 
-function fetchPostsTool(subreddit) {
+export function fetchPostsTool(cartoon) {
   return dispatch => {
-    dispatch(requestPosts(subreddit))
-    return fetch(`http://www.reddit.com/r/${subreddit}.json`)
-      .then(response => response.json())
-      .then(json => dispatch(receivePosts(subreddit, json)))
+    dispatch(requestPosts(cartoon))
+    setTimeout(function(){
+      dispatch(toViewCartoon(cartoon));
+    },2000);
+    // return fetch(`http://www.reddit.com/r/${subreddit}.json`)
+    //   .then(response => response.json())
+    //   .then(json => dispatch(receivePosts(subreddit, json)))
   }
 }
 
@@ -65,6 +68,7 @@ export function fetchPosts(subreddit) {
 export const toViewCartoon = (obj)  =>{
   return{
     type:'CARTOON_CONTENT',
+    title:obj.title,
     content:Object.assign(obj,{imgs:['//pic04.ishuhui.com/cartoon/book-1/1/851-8152/00.png?87302690','//pic04.ishuhui.com/cartoon/book-1/1/851-8152/03.png?87302690','//pic04.ishuhui.com/cartoon/book-1/1/851-8152/04.png?87302690','//pic04.ishuhui.com/cartoon/book-1/1/851-8152/05.png?87302690','//pic04.ishuhui.com/cartoon/book-1/1/851-8152/06.png?87302690']})
   }
 }

@@ -8,11 +8,11 @@ import CartoonCardContent from '../../components/commons/cartoon-card-content/ca
 
 
 const mapStateToProps = (state) => {
-
   return {
     contentViewState: state.contentViewState ,
     contentWrap:state.contentWrap,
-    loadState:'hide'
+    cartoonCard:state.cartoonCard,
+    post:state.post
   }
 }
 
