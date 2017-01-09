@@ -12,7 +12,7 @@ class meModule extends Component {
     render(){
       return (
         <div className="jx-view-wrap">
-          <Me />
+          <Me children = { this.props.children }/>
           <Tabs />
         </div>
       )
