@@ -5,8 +5,8 @@ import './tabs.scss';
 
 class tabs extends Component {
 
-  constructor(prop) {
-    super(prop);
+  constructor(props) {
+    super(props);
     this.activeTab = 'manga';
   }
 

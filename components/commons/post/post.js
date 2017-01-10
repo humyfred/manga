@@ -5,13 +5,32 @@ import './post.scss'
 class Post extends Component {
 
     constructor(props){
-      super(props)
+      super(props);
+      this.likeState = 'icon-like';
+      this.commentState = 'icon-comment';
+    }
+
+
+    like(){
+      if(this.likeState==='icon-like'){
+        this.likeState = 'icon-like-full';
+      }else{
+        this.likeState = 'icon-like';
+      }
+    }
+
+    comment(){
+      if(this.commentState==='icon-comment'){
+        this.commentState = 'icon-comment-full';
+      }else{
+        this.commentState = 'icon-comment';
+      }
     }
 
     render(){
       return (
-        <div className='jx-post-wrap' onClick={this.props.onClick}>
-          <div className='jx-post'>
+        <div className='jx-post-wrap'>
+          <div className='jx-post' onClick={this.props.onClick}>
             <div className='jx-post__title'>
                 {this.props.title}
             </div>
@@ -35,8 +54,8 @@ class Post extends Component {
               <span className="jx-post-time">6小时前</span>
             </div>
             <div className="jx-post__infor">
-              <a><i className="iconfont icon-like"></i>{this.props.reply}</a>
-              <a><i className="iconfont icon-comment"></i>{this.props.views}</a>
+              <a onClick={() => this.like()}><i className={this.likeState + " iconfont"}></i>{this.props.reply}</a>
+              <a onClick={() => this.comment()}><i className={this.commentState + " iconfont"}></i>{this.props.views}</a>
             </div>
           </div>
         </div>
