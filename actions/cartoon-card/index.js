@@ -4,7 +4,7 @@ action types
 import fetch from 'isomorphic-fetch'
 
 const REQUEST_POSTS = 'REQUEST_POSTS'
-const RECEIVE_POSTS = 'RECEIVE_POSTS'
+const RECEIVE_POSTS = 'CARTOON_CONTENT'
 
 function requestPosts(cartoon) {
   return {
@@ -13,12 +13,11 @@ function requestPosts(cartoon) {
   }
 }
 
-function receivePosts(subreddit, json) {
-  return {
-    type: RECEIVE_POSTS,
-    subreddit,
-    posts: json.data.children.map(child => child.data),
-    receivedAt: Date.now()
+const toViewCartoon = (obj)  =>{
+  return{
+    type:RECEIVE_POSTS,
+    title:obj.title,
+    content:obj
   }
 }
 
@@ -61,15 +60,6 @@ export function fetchPosts(subreddit) {
       // 告诉调用代码不需要再等待。
       return Promise.resolve()
     }
-  }
-}
-
-
-export const toViewCartoon = (obj)  =>{
-  return{
-    type:'CARTOON_CONTENT',
-    title:obj.title,
-    content:Object.assign(obj,{imgs:['//pic04.ishuhui.com/cartoon/book-1/1/851-8152/00.png?87302690','//pic04.ishuhui.com/cartoon/book-1/1/851-8152/03.png?87302690','//pic04.ishuhui.com/cartoon/book-1/1/851-8152/04.png?87302690','//pic04.ishuhui.com/cartoon/book-1/1/851-8152/05.png?87302690','//pic04.ishuhui.com/cartoon/book-1/1/851-8152/06.png?87302690']})
   }
 }
 
