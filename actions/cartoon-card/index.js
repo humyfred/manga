@@ -25,12 +25,12 @@ function receivePosts(subreddit, json) {
 export function fetchPostsTool(cartoon) {
   return dispatch => {
     dispatch(requestPosts(cartoon))
-    setTimeout(function(){
-      dispatch(toViewCartoon(cartoon));
-    },2000);
-    // return fetch(`http://www.reddit.com/r/${subreddit}.json`)
-    //   .then(response => response.json())
-    //   .then(json => dispatch(receivePosts(subreddit, json)))
+    // setTimeout(function(){
+    //   dispatch(toViewCartoon(cartoon));
+    // },2000);
+    return fetch('http://localhost:3000/mangas/cartoon')
+      .then(response => response.json())
+      .then(json => dispatch(toViewCartoon(json)));
   }
 }
 
