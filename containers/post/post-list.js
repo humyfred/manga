@@ -1,6 +1,6 @@
 'use strict';
 import { connect } from 'react-redux'
-import { toViewPost , fetchPostsTool} from '../../actions/post'
+import { fetchPosts } from '../../actions/post'
 import Posts from '../../components/commons/post-list/post-list'
 
 
@@ -15,7 +15,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     detail: (obj) => {
-      dispatch(fetchPostsTool(obj));
+      dispatch(fetchPosts(obj));
     }
   }
 }

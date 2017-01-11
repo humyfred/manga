@@ -5,11 +5,10 @@ const indexViewState = (state,action) =>{
     case 'VIEW_CONTENT':
     case 'CARTOON_CONTENT':
     case 'POST_CONTENT':
-    case 'ME_CONTENT':
+    case 'MANGA_REQUEST_POSTS':
+    case 'POST_REQUEST_POSTS':
       return 'jx-view jx-view__under';
-    case 'NO_VIEW_CONTENT':
-      return 'jx-view jx-view__show';
-    default:
+    default://'NO_VIEW_CONTENT':
       return 'jx-view jx-view__show';
   }
 }
