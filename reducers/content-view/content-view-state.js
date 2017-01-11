@@ -4,13 +4,10 @@ const viewContent = (state,action) =>{
     case 'VIEW_CONTENT':
     case 'CARTOON_CONTENT':
     case 'POST_CONTENT':
-    case 'ME_CONTENT':
-    case 'REQUEST_POSTS':
+    case 'MANGA_REQUEST_POSTS':
+    case 'POST_REQUEST_POSTS':
       return 'jx-view jx-view__show';
-    case 'NO_VIEW_CONTENT':
-      return 'jx-view jx-view__hidden';
-
-    default:
+    default://'NO_VIEW_CONTENT'
       return 'jx-view jx-view__hidden';
   }
 }

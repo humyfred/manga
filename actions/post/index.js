@@ -1,47 +1,53 @@
 
-const REQUEST_POSTS = 'REQUEST_POSTS'
-const RECEIVE_POSTS = 'RECEIVE_POSTS'
+const REQUEST_POSTS = 'POST_REQUEST_POSTS'
+const RECEIVE_POSTS = 'POST_CONTENT'
 
-function requestPosts(post) {
+const requestPosts = (post) =>{
   return {
     type: REQUEST_POSTS,
     title: post.title
   }
 }
 
-function receivePosts(subreddit, json) {
-  return {
-    type: RECEIVE_POSTS,
-    subreddit,
-    posts: json.data.children.map(child => child.data),
-    receivedAt: Date.now()
+const toViewPost = (obj)  =>{
+  return{
+    type:RECEIVE_POSTS,
+    title:obj.title,
+    content:obj
   }
 }
 
-export function fetchPostsTool(post) {
+const fetchPostsTool = (post,getState) =>{
   return dispatch => {
     dispatch(requestPosts(post))
-    setTimeout(function(){
-      dispatch(toViewPost(post));
-    },2000);
-    // return fetch(`http://www.reddit.com/r/${subreddit}.json`)
-    //   .then(response => response.json())
-    //   .then(json => dispatch(receivePosts(subreddit, json)))
-  }
+    // setTimeout(function(){
+    //   dispatch(toViewPost(post));
+    // },2000);
+    return fetch('http://localhost:3000/posts/post')
+      .then(response => response.json())
+      .then(json => {
+          const state = getState();
+          if(state.contentWrap.type===REQUEST_POSTS){
+            dispatch(toViewPost(json))
+          }
+
+      })
+    }
 }
 
 function shouldFetchPosts(state, subreddit) {
-  const posts = state.postsBySubreddit[subreddit]
-  if (!posts) {
-    return true
-  } else if (posts.isFetching) {
-    return false
-  } else {
-    return posts.didInvalidate
-  }
+  // const posts = state.postsBySubreddit[subreddit]
+  // if (!posts) {
+  //   return true
+  // } else if (posts.isFetching) {
+  //   return false
+  // } else {
+  //   return posts.didInvalidate
+  // }
+  return true;
 }
 
-export function fetchPosts(subreddit) {
+export function fetchPosts(obj) {
 
   // 注意这个函数也接收了 getState() 方法
   // 它让你选择接下来 dispatch 什么。
@@ -50,28 +56,12 @@ export function fetchPosts(subreddit) {
   // 减少网络请求很有用。
 
   return (dispatch, getState) => {
-    if (shouldFetchPosts(getState(), subreddit)) {
+    if (shouldFetchPosts(getState(), obj)) {
       // 在 thunk 里 dispatch 另一个 thunk！
-      return dispatch(fetchPostsTool(subreddit))
+      return dispatch(fetchPostsTool(obj,getState))
     } else {
       // 告诉调用代码不需要再等待。
       return Promise.resolve()
     }
-  }
-}
-
-
-
-export const toViewPost = (obj)  =>{
-  return{
-    type:'POST_CONTENT',
-    title:obj.title,
-    content:Object.assign(obj,
-      {imgs:['//pic04.ishuhui.com/cartoon/book-1/1/851-8152/00.png?87302690',
-            '//pic04.ishuhui.com/cartoon/book-1/1/851-8152/03.png?87302690',
-            '//pic04.ishuhui.com/cartoon/book-1/1/851-8152/04.png?87302690',
-            '//pic04.ishuhui.com/cartoon/book-1/1/851-8152/05.png?87302690',
-            '//pic04.ishuhui.com/cartoon/book-1/1/851-8152/06.png?87302690']
-        })
   }
 }
