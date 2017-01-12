@@ -5,14 +5,20 @@ import Post from '../post/post'
 
 class PostList extends Component {
 
+  componentWillReceiveProps(props){
+    console.log(props)
+  }
+  
   render(){
     return (
       <section className={this.props.indexViewState+' jx-bottom-50'} >
-        {this.props.posts.map(post =>
+        {this.props.posts.map( (post,idx) =>
           <Post
             key = {post.id}
             {...post}
-            onClick={() =>this.props.detail(post)}
+            onClick={() => this.props.detail(post)}
+            like = {() => this.props.like(post,idx)}
+            comment = {() => this.props.comment(post,idx)}
             />
         )}
       </section>

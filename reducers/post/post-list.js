@@ -126,6 +126,13 @@ const PostList = (state = [], action) => {
             title:'草帽少年 第825话'
           }
         ]
+    case 'POST_LIKE':
+      datas[action.index] = action.content;
+      //datas.length = 9;
+      return datas;
+    case 'POST_COMMENT':
+      datas[action.index] = action.content;
+      return datas;
     default:
       return datas;
   }

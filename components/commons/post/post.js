@@ -10,9 +10,10 @@ class Post extends Component {
       this.commentState = 'icon-comment';
     }
 
+    
 
     like(){
-      if(this.likeState==='icon-like'){
+      if(this.props.isLike){
         this.likeState = 'icon-like-full';
       }else{
         this.likeState = 'icon-like';
@@ -20,7 +21,7 @@ class Post extends Component {
     }
 
     comment(){
-      if(this.commentState==='icon-comment'){
+      if(this.props.isComment){
         this.commentState = 'icon-comment-full';
       }else{
         this.commentState = 'icon-comment';
@@ -28,6 +29,8 @@ class Post extends Component {
     }
 
     render(){
+      this.like();
+      this.comment();
       return (
         <div className='jx-post-wrap'>
           <div className='jx-post' onClick={this.props.onClick}>
@@ -54,8 +57,8 @@ class Post extends Component {
               <span className="jx-post-time">6小时前</span>
             </div>
             <div className="jx-post__infor">
-              <a onClick={() => this.like()}><i className={this.likeState + " iconfont"}></i>{this.props.reply}</a>
-              <a onClick={() => this.comment()}><i className={this.commentState + " iconfont"}></i>{this.props.views}</a>
+              <a onClick={() => this.props.like()}><i className={this.likeState + " iconfont"}></i>{this.props.reply}</a>
+              <a onClick={() => this.props.comment()}><i className={this.commentState + " iconfont"}></i>{this.props.views}</a>
             </div>
           </div>
         </div>

@@ -1,6 +1,7 @@
 
 const REQUEST_POSTS = 'POST_REQUEST_POSTS'
 const RECEIVE_POSTS = 'POST_CONTENT'
+const LIKE_POST = 'POST_LIKE'
 
 const requestPosts = (post) =>{
   return {
@@ -17,6 +18,13 @@ const toViewPost = (obj)  =>{
   }
 }
 
+const toLikePost = (obj,idx) => {
+  return {
+    type:LIKE_POST,
+    index:idx,
+    content:obj
+  }
+}
 const fetchPostsTool = (post,getState) =>{
   return dispatch => {
     dispatch(requestPosts(post))
@@ -47,7 +55,7 @@ function shouldFetchPosts(state, subreddit) {
   return true;
 }
 
-export function fetchPosts(obj) {
+export const fetchPosts = (obj) => {
 
   // 注意这个函数也接收了 getState() 方法
   // 它让你选择接下来 dispatch 什么。
@@ -63,5 +71,18 @@ export function fetchPosts(obj) {
       // 告诉调用代码不需要再等待。
       return Promise.resolve()
     }
+  }
+}
+
+export const likePost = (post,idx) => {
+  return (dispatch,getState) =>{
+    return fetch('http://localhost:3000/posts/like/22')
+      .then(response => response.json())
+      .then(json => {
+          const state = getState();
+          // if(state.contentWrap.type===LIKE_POST){
+            dispatch(toLikePost(json,idx))
+          // }
+      })
   }
 }
