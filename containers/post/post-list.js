@@ -9,8 +9,7 @@ const mapStateToProps = (state) => {
   if(state.postList[0].isLike){
     return {
       posts: state.postList ,
-      indexViewState :state.indexViewState,
-      yeah:1
+      indexViewState :state.indexViewState
     }
   }
   return {
