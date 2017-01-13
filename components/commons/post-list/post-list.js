@@ -8,7 +8,7 @@ class PostList extends Component {
   componentWillReceiveProps(props){
     console.log(props)
   }
-  
+
   render(){
     return (
       <section className={this.props.indexViewState+' jx-bottom-50'} >
@@ -17,8 +17,8 @@ class PostList extends Component {
             key = {post.id}
             {...post}
             onClick={() => this.props.detail(post)}
-            like = {() => this.props.like(post,idx)}
-            comment = {() => this.props.comment(post,idx)}
+            likeF = {() => this.props.likeF(post,idx)}
+            commentF = {() => this.props.commentF(post,idx)}
             />
         )}
       </section>

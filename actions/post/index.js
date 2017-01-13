@@ -1,11 +1,14 @@
 
 const REQUEST_POSTS = 'POST_REQUEST_POSTS'
+const REQUEST_POSTS_LIKE = 'POST_REQUEST_LIKE'
+const REQUEST_POSTS_COMMENT= 'POST_REQUEST_COMMENT'
 const RECEIVE_POSTS = 'POST_CONTENT'
 const LIKE_POST = 'POST_LIKE'
+const COMMENT_POST = 'POST_COMMENT'
 
-const requestPosts = (post) =>{
+const requestPosts = (post,type) =>{
   return {
-    type: REQUEST_POSTS,
+    type: type,
     title: post.title
   }
 }
@@ -27,11 +30,11 @@ const toLikePost = (obj,idx) => {
 }
 const fetchPostsTool = (post,getState) =>{
   return dispatch => {
-    dispatch(requestPosts(post))
+    dispatch(requestPosts(post,REQUEST_POSTS))
     // setTimeout(function(){
     //   dispatch(toViewPost(post));
     // },2000);
-    return fetch('http://localhost:3000/posts/post')
+    return fetch('http://192.168.2.158:3000/posts/post')
       .then(response => response.json())
       .then(json => {
           const state = getState();
@@ -76,7 +79,8 @@ export const fetchPosts = (obj) => {
 
 export const likePost = (post,idx) => {
   return (dispatch,getState) =>{
-    return fetch('http://localhost:3000/posts/like/22')
+    dispatch(requestPosts(post,REQUEST_POSTS_LIKE));
+    return fetch('http://192.168.2.158:3000/posts/like/'+post.id)
       .then(response => response.json())
       .then(json => {
           const state = getState();

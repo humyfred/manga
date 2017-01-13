@@ -10,7 +10,7 @@ class Post extends Component {
       this.commentState = 'icon-comment';
     }
 
-    
+
 
     like(){
       if(this.props.isLike){
@@ -57,8 +57,8 @@ class Post extends Component {
               <span className="jx-post-time">6小时前</span>
             </div>
             <div className="jx-post__infor">
-              <a onClick={() => this.props.like()}><i className={this.likeState + " iconfont"}></i>{this.props.reply}</a>
-              <a onClick={() => this.props.comment()}><i className={this.commentState + " iconfont"}></i>{this.props.views}</a>
+              <a onClick={this.props.likeF}><i className={this.likeState + " iconfont"}></i>{this.props.like}</a>
+              <a onClick={this.props.commentF}><i className={this.commentState + " iconfont"}></i>{this.props.views}</a>
             </div>
           </div>
         </div>

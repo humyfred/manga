@@ -6,14 +6,9 @@ import Posts from '../../components/commons/post-list/post-list'
 
 
 const mapStateToProps = (state) => {
-  if(state.postList[0].isLike){
-    return {
-      posts: state.postList ,
-      indexViewState :state.indexViewState
-    }
-  }
   return {
     posts: state.postList ,
+    postsState:state.postsState,//标识posts更新状态
     indexViewState :state.indexViewState
   }
 }
@@ -23,10 +18,10 @@ const mapDispatchToProps = (dispatch) => {
     detail: (obj) => {
       dispatch(fetchPosts(obj));
     },
-    like : (obj,idx) =>{
+    likeF : (obj,idx) =>{
       dispatch(likePost(obj,idx));
     },
-    comment : (obj,idx) =>{
+    commentF : (obj,idx) =>{
       dispatch(likePost(obj,idx));
     }
   }
