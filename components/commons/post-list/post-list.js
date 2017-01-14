@@ -6,7 +6,7 @@ import Post from '../post/post'
 class PostList extends Component {
 
   componentWillReceiveProps(props){
-    console.log(props)
+    //console.log(props)
   }
 
   render(){

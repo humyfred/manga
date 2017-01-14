@@ -8,6 +8,9 @@ class PostContent extends Component {
       super(props);
     }
 
+    createMarkup(content) {
+      return {__html: content};
+    }
     render(){
       return (
           <div className="jx-postContent">
@@ -25,8 +28,8 @@ class PostContent extends Component {
               </div>
             </div>
 
-            <div className="jx-postContent__bd">
-              {this.props.content}
+            <div className="jx-postContent__bd" dangerouslySetInnerHTML={this.createMarkup(this.props.content)}>
+
             </div>
           </div>
       )
