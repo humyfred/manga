@@ -1,4 +1,4 @@
-
+import {server_address} from '../../config.js'
 const REQUEST_POSTS = 'POST_REQUEST_POSTS'
 const REQUEST_POSTS_LIKE = 'POST_REQUEST_LIKE'
 const REQUEST_POSTS_COMMENT= 'POST_REQUEST_COMMENT'
@@ -34,7 +34,7 @@ const fetchPostsTool = (post,getState) =>{
     // setTimeout(function(){
     //   dispatch(toViewPost(post));
     // },2000);
-    return fetch('http://192.168.2.158:3000/posts/post')
+    return fetch('http://'+server_address+'/posts/'+post.id)
       .then(response => response.json())
       .then(json => {
           const state = getState();
@@ -80,7 +80,7 @@ export const fetchPosts = (obj) => {
 export const likePost = (post,idx) => {
   return (dispatch,getState) =>{
     dispatch(requestPosts(post,REQUEST_POSTS_LIKE));
-    return fetch('http://192.168.2.158:3000/posts/like/'+post.id)
+    return fetch('http://'+server_address+'/posts/like/'+post.id)
       .then(response => response.json())
       .then(json => {
           const state = getState();

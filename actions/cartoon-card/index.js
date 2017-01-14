@@ -2,7 +2,7 @@
 action types
 */
 import fetch from 'isomorphic-fetch'
-
+import {server_address} from '../../config.js'
 const REQUEST_POSTS = 'MANGA_REQUEST_POSTS';//与post区分是为避免两个延时的请求出现交叉展示
 const RECEIVE_POSTS = 'CARTOON_CONTENT'
 
@@ -33,7 +33,7 @@ export function fetchPostsTool(cartoon,getState) {
     // setTimeout(function(){
     //   dispatch(toViewCartoon(cartoon));
     // },2000);
-    return fetch('http://localhost:3000/mangas/cartoon')
+    return fetch('http://'+server_address+'/mangas/cartoon')
       .then(response => response.json())
       .then(json => {
           const state = getState();

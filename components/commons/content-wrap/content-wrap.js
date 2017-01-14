@@ -10,7 +10,12 @@ class ContentWrap extends Component {
   constructor(props){
     super(props);
   }
-
+  componentWillMount(){
+    Object.assign(this,initLoadingState(this.props));
+  }
+  componentWillUpdate(){
+    Object.assign(this,initLoadingState(this.props));
+  }
 
   render(){
     Object.assign(this,initLoadingState(this.props));
