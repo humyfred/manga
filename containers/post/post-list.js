@@ -8,7 +8,7 @@ import Posts from '../../components/commons/post-list/post-list'
 const mapStateToProps = (state) => {
   return {
     posts: state.postList ,
-    postsState:state.postsState,//标识posts更新状态
+    actionType:state.actionType,//标识posts更新状态
     indexViewState :state.indexViewState
   }
 }
