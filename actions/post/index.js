@@ -125,9 +125,9 @@ export const likePost = (post,idx) => {
       .then(response => response.json())
       .then(json => {
           const state = getState();
-          // if(state.contentWrap.type===LIKE_POST){
+          if(state.actionType===REQUEST_POSTS_LIKE){
             dispatch(toLikePost(json,idx))
-          // }
+          }
       })
   }
 }

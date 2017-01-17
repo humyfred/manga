@@ -10,8 +10,16 @@ class PostList extends Component {
     //console.log(props)
   }
 
-  render(){
+  componentWillMount(){
     Object.assign(this,initLoadingState(this.props));
+  }
+
+  componentWillUpdate(){
+    Object.assign(this,initLoadingState(this.props));
+  }
+
+  render(){
+
     return (
       <section className={this.props.indexViewState+' jx-bottom-50'} >
         {this.props.posts.map( (post,idx) =>
