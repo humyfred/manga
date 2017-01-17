@@ -1,7 +1,8 @@
 'use strict';
 import React,{Component, PropTypes} from 'react'
 import Post from '../post/post'
-
+import Loading from '../Loading/Loading'
+import { initLoadingState } from './post-list-action.js'
 
 class PostList extends Component {
 
@@ -10,6 +11,7 @@ class PostList extends Component {
   }
 
   render(){
+    Object.assign(this,initLoadingState(this.props));
     return (
       <section className={this.props.indexViewState+' jx-bottom-50'} >
         {this.props.posts.map( (post,idx) =>
@@ -21,6 +23,8 @@ class PostList extends Component {
             commentF = {() => this.props.commentF(post,idx)}
             />
         )}
+
+        <Loading showState={this.loadState}/>
       </section>
     )
   }

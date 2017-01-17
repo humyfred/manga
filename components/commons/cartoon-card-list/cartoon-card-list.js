@@ -1,11 +1,13 @@
 'use strict';
 import React,{Component, PropTypes} from 'react'
 import CartoonCard from '../cartoon-card/cartoon-card'
-
+import Loading from '../Loading/Loading'
+import { initLoadingState } from './cartoon-card-list-action.js'
 
 class CartoonCardList extends Component {
 
   render(){
+    Object.assign(this,initLoadingState(this.props));
     return (
       <section className={this.props.indexViewState+' jx-bottom-50'} >
         {this.props.CartoonCards.map(cartoonCard =>
@@ -15,6 +17,8 @@ class CartoonCardList extends Component {
             onClick={() =>this.props.detail(cartoonCard)}
             />
         )}
+
+        <Loading showState={this.loadState}/>
       </section>
     )
   }

@@ -5,20 +5,20 @@ let beforeTitle = '';
 
 const contentWrap = (state,action) =>{
   switch(action.type) {
-    case 'MANGA_REQUEST_POSTS':
-    case 'POST_REQUEST_POSTS':
+    case 'CARTOON_REQUEST_VIEW':
+    case 'POST_REQUEST_VIEW':
       beforeTitle = action.title;
-      return {type:action.type,title:action.title};
+      return {title:action.title};
     case 'NO_VIEW_CONTENT'://退出详细页面
-      return {type:action.type,loadBefore:loadPageBefore,title:beforeTitle};
+      return {loadBefore:loadPageBefore,title:beforeTitle};
     case 'CARTOON_CONTENT':
       loadPageBefore= 'cartoon';
       beforeTitle = action.title;
-      return {type:action.type,title:action.title};
+      return {title:action.title};
     case 'POST_CONTENT':
       loadPageBefore= 'post';
       beforeTitle = action.title;
-      return {type:action.type,title:action.title};
+      return {title:action.title};
     default:
       return {type:'',title:''};
   }
