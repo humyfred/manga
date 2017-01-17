@@ -1,6 +1,6 @@
 'use strict';
 import { connect } from 'react-redux'
-import { fetchPosts } from '../../actions/cartoon-card'
+import { fetchCartoons , fetchCartoon } from '../../actions/cartoon-card'
 import { toViewDetail } from '../../actions/commons';//转换场景
 import CartoonCards from '../../components/commons/cartoon-card-list/cartoon-card-list'
 import { browserHistory } from 'react-router'
@@ -17,7 +17,10 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     detail: (obj) => {
-      dispatch(fetchPosts(obj));
+      dispatch(fetchCartoon(obj));
+    },
+    loadData : () => {
+      dispatch(fetchCartoons());
     }
   }
 }

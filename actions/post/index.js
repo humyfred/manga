@@ -1,23 +1,39 @@
 import {server_address} from '../../config.js'
-const REQUEST_POSTS = 'POST_REQUEST_POSTS'
+const REQUEST_POSTS_VIEW = 'POST_REQUEST_VIEW'
+const REQUEST_POSTS_LIST = 'POST_REQUEST_LIST'
 const REQUEST_POSTS_LIKE = 'POST_REQUEST_LIKE'
 const REQUEST_POSTS_COMMENT= 'POST_REQUEST_COMMENT'
-const RECEIVE_POSTS = 'POST_CONTENT'
+const RECEIVE_POST = 'POST_CONTENT'
+const RECEIVE_POSTS = 'POST_LIST'
 const LIKE_POST = 'POST_LIKE'
 const COMMENT_POST = 'POST_COMMENT'
 
 const requestPosts = (post,type) =>{
-  return {
-    type: type,
-    title: post.title
+  if(post){
+    return {
+      type: type,
+      title: post.title
+    }
+  }else{
+    return {
+      type: type
+    }
   }
+
 }
 
 const toViewPost = (obj)  =>{
   return{
-    type:RECEIVE_POSTS,
+    type:RECEIVE_POST,
     title:obj.title,
     content:obj
+  }
+}
+
+const toViewPosts = (list)  =>{
+  return{
+    type:RECEIVE_POSTS,
+    list
   }
 }
 
@@ -28,23 +44,35 @@ const toLikePost = (obj,idx) => {
     content:obj
   }
 }
-const fetchPostsTool = (post,getState) =>{
+const fetchPostByObj = (post,getState) =>{
   return dispatch => {
-    dispatch(requestPosts(post,REQUEST_POSTS))
-    // setTimeout(function(){
-    //   dispatch(toViewPost(post));
-    // },2000);
+    dispatch(requestPosts(post,REQUEST_POSTS_VIEW));
     return fetch('http://'+server_address+'/posts/'+post.id)
       .then(response => response.json())
       .then(json => {
           const state = getState();
-          if(state.contentWrap.type===REQUEST_POSTS){
+          if(state.actionType===REQUEST_POSTS_VIEW){
             dispatch(toViewPost(json))
           }
 
       })
     }
 }
+
+function fetchPostList (getState) {
+  return dispatch => {
+    dispatch(requestPosts(null,REQUEST_POSTS_LIST))
+    return fetch('http://'+server_address+'/posts/list')
+      .then(response => response.json())
+      .then(json => {
+          const state = getState();
+          if(state.actionType===REQUEST_POSTS_LIST){
+            dispatch(toViewPosts(json));
+          }
+      });
+  }
+}
+
 
 function shouldFetchPosts(state, subreddit) {
   // const posts = state.postsBySubreddit[subreddit]
@@ -58,7 +86,7 @@ function shouldFetchPosts(state, subreddit) {
   return true;
 }
 
-export const fetchPosts = (obj) => {
+export const fetchPost = (obj) => {
 
   // 注意这个函数也接收了 getState() 方法
   // 它让你选择接下来 dispatch 什么。
@@ -69,7 +97,20 @@ export const fetchPosts = (obj) => {
   return (dispatch, getState) => {
     if (shouldFetchPosts(getState(), obj)) {
       // 在 thunk 里 dispatch 另一个 thunk！
-      return dispatch(fetchPostsTool(obj,getState))
+      return dispatch(fetchPostByObj(obj,getState))
+    } else {
+      // 告诉调用代码不需要再等待。
+      return Promise.resolve()
+    }
+  }
+}
+
+export const fetchPosts = () => {
+
+  return (dispatch, getState) => {
+    if (shouldFetchPosts(getState())) {
+      // 在 thunk 里 dispatch 另一个 thunk！
+      return dispatch(fetchPostList(getState))
     } else {
       // 告诉调用代码不需要再等待。
       return Promise.resolve()

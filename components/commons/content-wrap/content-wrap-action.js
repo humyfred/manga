@@ -30,17 +30,12 @@ const postView = (content)  =>{
   )
 }
 
-const meView = (content)  =>{
-  return content.imgs.map(
-      img => <img src={img}/>
-    );
-}
 export const view = (props)  =>{
-if(props.contentWrap.type==='CARTOON_CONTENT'){
+if(props.actionType==='CARTOON_CONTENT'){
    return  cartoonView(props.cartoonCard);
- }else if(props.contentWrap.type==='POST_CONTENT'){
+ }else if(props.actionType==='POST_CONTENT'){
    return  postView(props.post);
- }else if(props.contentWrap.type==='NO_VIEW_CONTENT'){
+ }else if(props.actionType==='NO_VIEW_CONTENT'){
     if(props.contentWrap.loadBefore==='cartoon'){//继续展示之前的页面，保持不操作dom
       return  cartoonView(props.cartoonCard);
     }else{

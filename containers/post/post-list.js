@@ -1,6 +1,6 @@
 'use strict';
 import { connect } from 'react-redux'
-import { fetchPosts , likePost } from '../../actions/post'
+import { fetchPost , likePost , fetchPosts } from '../../actions/post'
 import Posts from '../../components/commons/post-list/post-list'
 
 
@@ -16,7 +16,10 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     detail: (obj) => {
-      dispatch(fetchPosts(obj));
+      dispatch(fetchPost(obj));
+    },
+    loadData : () => {
+      dispatch(fetchPosts());
     },
     likeF : (obj,idx) =>{
       dispatch(likePost(obj,idx));

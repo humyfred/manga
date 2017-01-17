@@ -12,7 +12,8 @@ const mapStateToProps = (state) => {
     contentViewState: state.contentViewState ,
     contentWrap:state.contentWrap,
     cartoonCard:state.cartoonCard,
-    post:state.post
+    post:state.post,
+    actionType : state.actionType
   }
 }
 
