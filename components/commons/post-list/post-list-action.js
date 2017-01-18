@@ -1,7 +1,6 @@
 
 export const initLoadingState = (props) => {
     if(props.posts.length===0){
-      loadData(props);
       return {
         loadState :'show',
       }
@@ -12,8 +11,8 @@ export const initLoadingState = (props) => {
     }
 }
 
-const loadData = (props) => {
-  if(props.posts.length===0 && props.actionType!=='POST_REQUEST_LIST'){
+export const loadData = (props) => {
+  if(props.posts.length===0 && !props.isFetching){
     props.loadData();
   }
 }

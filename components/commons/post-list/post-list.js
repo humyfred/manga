@@ -2,7 +2,7 @@
 import React,{Component, PropTypes} from 'react'
 import Post from '../post/post'
 import Loading from '../Loading/Loading'
-import { initLoadingState } from './post-list-action.js'
+import { initLoadingState , loadData } from './post-list-action.js'
 
 class PostList extends Component {
 
@@ -11,6 +11,7 @@ class PostList extends Component {
   }
 
   componentWillMount(){
+    Object.assign(this,loadData(this.props));
     Object.assign(this,initLoadingState(this.props));
   }
 
@@ -22,13 +23,13 @@ class PostList extends Component {
 
     return (
       <section className={this.props.indexViewState+' jx-bottom-50'} >
-        {this.props.posts.map( (post,idx) =>
+        {this.props.postsId.map( (id) =>
           <Post
-            key = {post.id}
-            {...post}
-            onClick={() => this.props.detail(post)}
-            likeF = {() => this.props.likeF(post,idx)}
-            commentF = {() => this.props.commentF(post,idx)}
+            key = {id}
+            {...this.props.posts[id]}
+            onClick={() => this.props.detail(this.props.posts[id])}
+            likeF = {() => this.props.likeF(this.props.posts[id])}
+            commentF = {() => this.props.commentF(this.props.posts[id])}
             />
         )}
 
@@ -41,11 +42,6 @@ class PostList extends Component {
 
 
 PostList.propTypes = {
-    posts:PropTypes.arrayOf(PropTypes.shape({
-      title: PropTypes.string.isRequired,
-      reply: PropTypes.number.isRequired,
-      views: PropTypes.number.isRequired
-  }).isRequired).isRequired,
     indexViewState:PropTypes.string.isRequired,
     detail: PropTypes.func.isRequired
 }

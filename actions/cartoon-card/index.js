@@ -44,7 +44,7 @@ function fetchCartoonByObj(cartoon,getState) {
       .then(response => response.json())
       .then(json => {
           const state = getState();
-          if(state.actionType===REQUEST_CARTOON_VIEW){
+          if(state.cartoonCardList.isFetching===REQUEST_CARTOON_VIEW){
             dispatch(toViewCartoon(json));
           }
       });
@@ -58,7 +58,7 @@ function fetchCartoonList (getState) {
       .then(response => response.json())
       .then(json => {
           const state = getState();
-          if(state.actionType===REQUEST_CARTOON_LIST){
+          if(state.cartoonCardList.isFetching){
             dispatch(toViewCartoons(json));
           }
       });

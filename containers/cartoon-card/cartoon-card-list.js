@@ -9,7 +9,8 @@ import { browserHistory } from 'react-router'
 
 const mapStateToProps = (state) => {
   return {
-    CartoonCards: state.cartoonCardList ,
+    CartoonCards: state.cartoonCardList.items,
+    isFetching : state.cartoonCardList.isFetching,
     indexViewState :state.indexViewState
   }
 }
