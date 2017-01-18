@@ -1,12 +1,10 @@
 
-let post = {}
-const Post = (state = [], action) => {
+const Post = (state = '', action) => {
   switch (action.type) {
     case 'POST_CONTENT':
-        post = action.content;
-        return post;
+        return action.content.id;
     default:
-      return post;
+      return state;
   }
 }
 

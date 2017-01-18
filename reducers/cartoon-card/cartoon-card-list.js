@@ -4,13 +4,18 @@ import {combineReducers } from 'redux'
 let datas = [];
 //let idx = 5;
 
-const CartoonCardList = (state = [], action) => {
+const CartoonCardList = (state = {isFetching:false,items:[]}, action) => {
   switch (action.type) {
     case 'CARTOON_LIST':
-    datas = action.list;
-    return datas;
+    return Object.assign({},state,{
+      items: action.list
+    })
+    case 'CARTOON_REQUEST_LIST':
+    return Object.assign({},state,{
+      isFetching: true
+    })
     default:
-      return datas;
+      return state;
   }
 }
 

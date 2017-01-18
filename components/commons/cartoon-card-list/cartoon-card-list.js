@@ -27,10 +27,10 @@ class CartoonCardList extends Component {
 
 
 CartoonCardList.propTypes = {
-    CartoonCards:PropTypes.arrayOf(PropTypes.shape({
-      imgSrc: PropTypes.string.isRequired,
-      title: PropTypes.string.isRequired
-  }).isRequired).isRequired,
+  //   CartoonCards:PropTypes.arrayOf(PropTypes.shape({
+  //     imgSrc: PropTypes.string.isRequired,
+  //     title: PropTypes.string.isRequired
+  // }).isRequired).isRequired,
     indexViewState:PropTypes.string.isRequired,
     detail: PropTypes.func.isRequired
 }

@@ -31,11 +31,11 @@ const postView = (content)  =>{
 }
 
 export const view = (props)  =>{
-if(props.actionType==='CARTOON_CONTENT'){
+if(props.contentWrap.actionType==='CARTOON_CONTENT'){
    return  cartoonView(props.cartoonCard);
- }else if(props.actionType==='POST_CONTENT'){
+ }else if(props.contentWrap.actionType==='POST_CONTENT'){
    return  postView(props.post);
- }else if(props.actionType==='NO_VIEW_CONTENT'){
+ }else if(props.contentWrap.actionType==='NO_VIEW_CONTENT'){
     if(props.contentWrap.loadBefore==='cartoon'){//继续展示之前的页面，保持不操作dom
       return  cartoonView(props.cartoonCard);
     }else{

@@ -7,8 +7,9 @@ import Posts from '../../components/commons/post-list/post-list'
 
 const mapStateToProps = (state) => {
   return {
-    posts: state.postList ,
-    actionType:state.actionType,//标识posts更新状态
+    postsId: state.postList.items ,
+    posts: state.entities.posts,
+    isFetching:state.postList.isFetching,//标识posts更新状态
     indexViewState :state.indexViewState
   }
 }
@@ -21,11 +22,11 @@ const mapDispatchToProps = (dispatch) => {
     loadData : () => {
       dispatch(fetchPosts());
     },
-    likeF : (obj,idx) =>{
-      dispatch(likePost(obj,idx));
+    likeF : (obj) =>{
+      dispatch(likePost(obj));
     },
-    commentF : (obj,idx) =>{
-      dispatch(likePost(obj,idx));
+    commentF : (obj) =>{
+      dispatch(likePost(obj));
     }
   }
 }

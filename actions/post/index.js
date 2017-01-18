@@ -40,7 +40,6 @@ const toViewPosts = (list)  =>{
 const toLikePost = (obj,idx) => {
   return {
     type:LIKE_POST,
-    index:idx,
     content:obj
   }
 }
