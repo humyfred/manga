@@ -2,12 +2,19 @@
 import React,{Component, PropTypes} from 'react'
 import CartoonCard from '../cartoon-card/cartoon-card'
 import Loading from '../Loading/Loading'
-import { initLoadingState } from './cartoon-card-list-action.js'
+import { initLoadingState, loadData } from './cartoon-card-list-action.js'
 
 class CartoonCardList extends Component {
 
-  render(){
+  componentWillMount(){
+    loadData(this.props);
     Object.assign(this,initLoadingState(this.props));
+  }
+  componentWillUpdate(){
+    Object.assign(this,initLoadingState(this.props));
+  }
+
+  render(){
     return (
       <section className={this.props.indexViewState+' jx-bottom-50'} >
         {this.props.CartoonCards.map(cartoonCard =>

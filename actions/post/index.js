@@ -50,7 +50,7 @@ const fetchPostByObj = (post,getState) =>{
       .then(response => response.json())
       .then(json => {
           const state = getState();
-          if(state.actionType===REQUEST_POSTS_VIEW){
+          if(state.contentWrap.isFetching){
             dispatch(toViewPost(json))
           }
 
@@ -65,7 +65,7 @@ function fetchPostList (getState) {
       .then(response => response.json())
       .then(json => {
           const state = getState();
-          if(state.actionType===REQUEST_POSTS_LIST){
+          if(state.postList.isFetching){
             dispatch(toViewPosts(json));
           }
       });
