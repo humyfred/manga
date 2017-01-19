@@ -1,7 +1,6 @@
 
 export const initLoadingState = (props) => {
     if(props.CartoonCards.length===0){
-      loadData(props);
       return {
         loadState :'show',
       }
@@ -12,7 +11,7 @@ export const initLoadingState = (props) => {
     }
 }
 
-const loadData = (props) => {
+export const loadData = (props) => {
   if(props.CartoonCards.length===0){
     props.loadData();
   }

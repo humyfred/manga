@@ -18,8 +18,6 @@ class ContentWrap extends Component {
   }
 
   render(){
-    Object.assign(this,initLoadingState(this.props));
-
     return (
       <section className={this.props.contentViewState+' jx-content-wrap'} style={{background:'#EFF3F6'}}>
         <header className='jx-content-header flex vertical-middle'>

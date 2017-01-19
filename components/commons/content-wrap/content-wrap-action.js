@@ -6,7 +6,7 @@ import CartoonCardContent from '../cartoon-card-content/cartoon-card-content'
 import PostContent from '../post-content/post-content'
 
 export const initLoadingState = (props) => {
-    if(props.contentWrap.type==='MANGA_REQUEST_POSTS'||props.contentWrap.type==='POST_REQUEST_POSTS'){
+    if(props.contentWrap.type==='CARTOON_REQUEST_VIEW'||props.contentWrap.type==='POST_REQUEST_VIEW'){
       return {
         loadState :'show',
       }

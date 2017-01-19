@@ -22,8 +22,8 @@ const entities = (state = {posts:[],cartoons:[]}, action) => {
         state.posts[action.content.id] = action.content;
         return state;
     case 'CARTOON_LIST':
-        action.list.forEach(post => {
-                state.posts[post.id] = post ;
+        action.list.forEach(cartoon => {
+            state.cartoons[cartoon.id] = cartoon ;
         })
         return state;
     default:

@@ -8,7 +8,8 @@ const CartoonCardList = (state = {isFetching:false,items:[]}, action) => {
   switch (action.type) {
     case 'CARTOON_LIST':
     return Object.assign({},state,{
-      items: action.list
+      items: action.list,
+      isFetching: false
     })
     case 'CARTOON_REQUEST_LIST':
     return Object.assign({},state,{
