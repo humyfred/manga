@@ -8,7 +8,10 @@ import the_me from '../../components/commons/me/me';
 
 const mapStateToProps = (state) => {
 
-  return {me:state.me.me,tabContent:state.me.tabContent,nav:state.me.nav};
+  return {me:state.me.me,
+    tabContent:state.me.tabContent,
+    nav:state.me.nav
+  };
 };
 
 

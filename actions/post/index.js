@@ -124,7 +124,7 @@ export const likePost = (post,idx) => {
       .then(response => response.json())
       .then(json => {
           const state = getState();
-          if(state.actionType===REQUEST_POSTS_LIKE){
+          if(state.postList.isFetching){
             dispatch(toLikePost(json,idx))
           }
       })

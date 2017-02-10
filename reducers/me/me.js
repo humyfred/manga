@@ -5,22 +5,29 @@ let obj = {
    name:'小熊',
    autograph:'多情自古伤离别'
  },
+ nav:{name:'subscribe'},
  tabContent:'1111'
 };
 
-const me = (state = [], action) => {
+const me = (state = obj, action) => {
   switch (action.type) {
     case 'ME_SETTING':
-        return Object.assign(obj,{nav:{name:'subscribe'}});
+        return Object.assign({}, state, {nav:{name:'subscribe'}});
     case 'ME_VIEW_SUBSCRIBE':
-        return Object.assign(obj,{nav:{name:'subscribe'},tabContent:'1111'});
+        return Object.assign({}, state, {nav:{name:'subscribe'},tabContent:'1111'});
     case 'ME_VIEW_POST':
-        return Object.assign(obj,{nav:{name:'post'},tabContent:'2222'});
+        return Object.assign({}, state, {nav:{name:'post'},tabContent:'2222'});
     case 'ME_VIEW_LIKE':
-        return Object.assign(obj,{nav:{name:'like'},tabContent:'3333'});
+        return Object.assign({}, state, {nav:{name:'like'},tabContent:'3333'});
     default:
-       return obj;
+       return state;
   }
 }
 
+
+/**
+切忌Object.assign(obj,{...});
+返回的结果引用是obj,redux的组件connect会保存该应用，用于判断state区别，如果按照刚才例子，缓存的结果也是obj,判断的结果会是一样
+只有Object.assign({},obj,{...});每次的结果都是新创建的对象
+*/
 export default me

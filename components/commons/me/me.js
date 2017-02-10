@@ -11,7 +11,9 @@ class Me extends Component {
     super(props);
   }
 
-
+  componentWillReceiveProps(props){
+    //this.activeTabFn();
+  }
 
   render(){
     return (
@@ -49,6 +51,10 @@ class Me extends Component {
 Me.propTypes = {
 
 }
-
+/**
+  WillMount、WillUpdate方法中this.props的内容还是更新之前的，
+  直到render方法props才是更新之后的，
+  若要在WillUpdate时候拿到新props，必须在ReceiveProps中把参数props赋值给this.props
+*/
 
 export default Me
