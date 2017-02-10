@@ -6,17 +6,13 @@ import { initLoadingState , loadData } from './post-list-action.js'
 
 class PostList extends Component {
 
-  componentWillReceiveProps(props){
-    //console.log(props)
-  }
-
   componentWillMount(){
     Object.assign(this,loadData(this.props));
     Object.assign(this,initLoadingState(this.props));
   }
 
-  componentWillUpdate(){
-    Object.assign(this,initLoadingState(this.props));
+  componentWillReceiveProps(props){
+    Object.assign(this,initLoadingState(props));
   }
 
   render(){
