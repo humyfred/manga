@@ -15,19 +15,30 @@ class TabNav extends Component {
       this.activeTab='subscribe';
     }
   }
-
+  componentWillReceiveProps(props){
+    //this.activeTabFn();
+  }
+  componentWillMount(){
+  //this.activeTabFn();
+  }
+  componentWillUpdate(){
+  this.activeTabFn();
+  }
+  componentDidUpdate(){
+  //this.activeTabFn();
+  }
   render(){
-    this.activeTabFn();
+    //this.activeTabFn();
     return (
       <div>
       <ul className="jx-tab-nav cf">
-        <li className={this.activeTab=='subscribe'?'jx-tab-nav-item jx-tab-nav-item_active':'jx-tab-nav-item'} onClick={()=>this.props.toViewSubscribe()}>
+        <li className={this.props.nav.name=='subscribe'?'jx-tab-nav-item jx-tab-nav-item_active':'jx-tab-nav-item'} onClick={this.props.toViewSubscribe}>
           订阅的漫画
         </li>
-        <li className={this.activeTab=='post'?'jx-tab-nav-item jx-tab-nav-item_active':'jx-tab-nav-item'} onClick={()=>this.props.toViewPost()}>
+        <li className={this.props.nav.name=='post'?'jx-tab-nav-item jx-tab-nav-item_active':'jx-tab-nav-item'} onClick={this.props.toViewPost}>
           发的帖子
         </li>
-        <li className={this.activeTab=='like'?'jx-tab-nav-item jx-tab-nav-item_active':'jx-tab-nav-item'} onClick={()=>this.props.toViewLike()}>
+        <li className={this.props.nav.name=='like'?'jx-tab-nav-item jx-tab-nav-item_active':'jx-tab-nav-item'} onClick={this.props.toViewLike}>
           我点的赞
         </li>
       </ul>
