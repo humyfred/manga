@@ -10,8 +10,8 @@ class CartoonCardList extends Component {
     loadData(this.props);
     Object.assign(this,initLoadingState(this.props));
   }
-  componentWillUpdate(){
-    Object.assign(this,initLoadingState(this.props));
+  componentWillReceiveProps(props){
+    Object.assign(this,initLoadingState(props));
   }
 
   render(){
