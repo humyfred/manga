@@ -15,10 +15,11 @@
   }
 
   dropdownLoading.prototype.onTouchStart = function(event){
-
+    this.startY = event.touches[0].pageY;
   }
 
   dropdownLoading.prototype.onTouchMove = function(event){
+    var currentY = event.touches[0].pageY;
 
   }
 
@@ -27,7 +28,7 @@
   }
 
 
-  if(typeof module.export!==undefined){
+  if(typeof module !==undefined && typeof module.export === 'object'){
     module.export = dropdownLoading;
   }else{
     window.dropdownLoading = dropdownLoading;

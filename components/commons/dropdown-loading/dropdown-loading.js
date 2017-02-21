@@ -1,5 +1,6 @@
 'use strict';
 import React,{Component , PropTypes} from 'react'
+import
 //import './cartoon-card.scss'
 
 class DropdownLoading extends Component {
