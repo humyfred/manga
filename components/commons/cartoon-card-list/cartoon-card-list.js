@@ -3,10 +3,23 @@ import React,{Component, PropTypes} from 'react'
 import CartoonCard from '../cartoon-card/cartoon-card'
 import Loading from '../Loading/Loading'
 import { initLoadingState, loadData } from './cartoon-card-list-action.js'
+//import DropdownLoading from '../dropdown-loading/dropdown-loading'
 
 class CartoonCardList extends Component {
 
   componentWillMount(){
+    setTimeout(function(){
+      new dropdownLoading({
+        target: document.querySelector('#cartoon'),
+        loading:function(){
+          var self = this;
+          setTimeout(function(){
+            console.log(1);
+            self.recover();
+          },1000);
+        }
+      });
+    },0)
     loadData(this.props);
     Object.assign(this,initLoadingState(this.props));
   }
@@ -16,7 +29,7 @@ class CartoonCardList extends Component {
 
   render(){
     return (
-      <section className={this.props.indexViewState+' jx-bottom-50'} >
+      <section id="cartoon" className={this.props.indexViewState+' jx-bottom-50'} >
         {this.props.CartoonCards.map(cartoonCard =>
           <CartoonCard
             key = {cartoonCard.id}

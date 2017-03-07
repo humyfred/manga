@@ -34,19 +34,13 @@ class Post extends Component {
       return (
         <div className='jx-post-wrap'>
           <div className='jx-post' onClick={this.props.onClick}>
-            <div className='jx-post__title'>
+            <div className='jx-post__title ellipsis'>
                 {this.props.title}
             </div>
 
             <div className="jx-post__content">
               <div className='jx-post__summary'>
                 {this.props.summary}
-              </div>
-
-              <div className='jx-post__pictures'>
-                {this.props.pictures.map( pic =>
-                    <img src={pic} key={pic}/>
-                )}
               </div>
             </div>
           </div>
