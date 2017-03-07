@@ -12,11 +12,13 @@ class postModule extends Component {
 
     render(){
       return (
+      <div>
         <div className="jx-view-wrap">
           <PostList />
           <ContentWrap />
-          <Tabs />
         </div>
+        <Tabs />
+      </div>
       )
     }
 

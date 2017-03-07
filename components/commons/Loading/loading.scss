@@ -6,11 +6,31 @@
     right:0;
     width:100px;
     height:100px;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     text-align: center;
     padding: 9px;
     margin:auto;
     border-radius:10px;
     color:#fff;
-    opacity:0.8;
+    opacity:0.7;
     background:#000;
+}
+
+.jx-loading-loop{
+  animation:js-loading 1s steps(20 , end) infinite;
+}
+
+@keyframes js-loading {
+  0 {
+    transform: rotateZ(0);
+    opacity: 0;
+  }
+
+  100%{
+    transform: rotateZ(360deg);
+    opacity: 1;
+  }
 }

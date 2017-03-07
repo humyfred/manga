@@ -12,11 +12,13 @@ class Index extends Component {
 
     render(){
       return (
+      <div>
         <div className="jx-view-wrap">
           <CartoonCardList />
           <ContentWrap />
-          <Tabs />
         </div>
+        <Tabs />
+      </div>
       )
     }
 
