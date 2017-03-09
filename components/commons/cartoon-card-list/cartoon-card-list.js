@@ -15,8 +15,8 @@ class CartoonCardList extends Component {
           var self = this;
           setTimeout(function(){
             console.log(1);
-            self.recover();
-          },1000);
+            self.recover(s);
+          },3000);
         }
       });
     },0)
@@ -29,7 +29,8 @@ class CartoonCardList extends Component {
 
   render(){
     return (
-      <section id="cartoon" className={this.props.indexViewState+' jx-bottom-50'} >
+      <section  className={this.props.indexViewState+' jx-bottom-50'} >
+        <div id="cartoon">
         {this.props.CartoonCards.map(cartoonCard =>
           <CartoonCard
             key = {cartoonCard.id}
@@ -37,7 +38,7 @@ class CartoonCardList extends Component {
             onClick={() =>this.props.detail(cartoonCard)}
             />
         )}
-
+        </div>
         <Loading showState={this.loadState}/>
       </section>
     )
