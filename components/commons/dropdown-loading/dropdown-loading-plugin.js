@@ -17,6 +17,7 @@
     this.touchStart = options.touchStart || noop;
     this.touchEnd = options.touchEnd || noop;
     this.loading = options.loading || noop;
+    this.prevUpGap = 0;//先前上拉距离
     this.loadingPosition = options.loadingPosition || 50;//加载中的滑动距离（横向、纵向）
     this._target.addEventListener('touchstart',this._touchStart.bind(this),false);
     this._target.addEventListener('touchmove',this._touchMove.bind(this),false);
@@ -32,6 +33,7 @@
   dropdownLoading.prototype._touchStart = function(evt){
     this.startY = evt.touches[0].pageY;
 
+
     this.touchStart.call(this, evt);
   }
 
@@ -40,8 +42,14 @@
     this._currentY = evt.touches[0].pageY;
     this._gap = this._currentY - this.startY;
 
-    if(this._currentY){
-      this._target.style.transform = 'translate3d(0,' + this._gap + 'px, 0)';
+    if(this._gap >= 0){
+      this._target.style.transform = 'translate3d(0,' + this._gap/3 + 'px, 0)';
+    }else{
+      this.prevUpGap += this._gap;
+      if(Math.abs(this.prevUpGap) > this._target.offsetHeight){
+        this._target.style.transform = 'translate3d(0,' + this._target.offsetHeight + (Math.abs(this.prevUpGap) - this._target.offsetHeight)/3 + 'px, 0)';
+      }
+
     }
     this.touchMove.call(this, evt);
 
@@ -50,9 +58,8 @@
   dropdownLoading.prototype._touchEnd = function(evt){
 
 
-    if ( this._gap < 40 && this._currentY > 0) {
-      this._target.style.transform = 'translate3d(0, 0, 0)';
-      this._target.style.transition = 'transform 0.5s linear';
+    if ( this._gap < 40 && this._gap > 0) {
+      this.recover();
     } else if(this._gap > 40){//请求下载
       this.hold();
       this._loading(evt);
@@ -60,7 +67,7 @@
 
     this.touchEnd.call(this, evt, this._gap);
 
-    if(this.status !== 'holding'){
+    if(this.status !== 'holding' && this._gap > 0){//停留与上拉情况不回到原点
       this.recover();
     }
   }
@@ -68,22 +75,28 @@
   dropdownLoading.prototype._loading = function(evt){
 
     this.loading.call(this, evt);
-
+    this.recover();
   }
 
   dropdownLoading.prototype.hold = function(){//停留加载状态
 
     this.status = 'holding';
-    this._target.style.transform = 'translate3d(0, ' + this.loadingPosition + 'px, 0)';
-    this._target.style.transition = 'transform 0.5s linear';
+    this.recover(this.loadingPosition);
 
   }
 
-  dropdownLoading.prototype.recover = function(){
+  dropdownLoading.prototype.recover = function(position){
     this.status = 'recovered';
+    position = position || 0;//原点
     //this.touchEnd.call(this, evt, this._gap);
-    this._target.style.transform = 'translate3d(0, 0, 0)';
-    this._target.style.transition = 'transform 0.5s linear';
+    this._gap  -= 3;
+    this._target.style.transform = 'translate3d(0, ' + this._gap/3 + 'px, 0)';
+    var self = this;
+    if(this._gap > position){
+      setTimeout(function(){
+        self.recover.call(self, position);
+      },12);
+    }
   }
 
   var dropdownLoadingPlugin = dropdownLoading;
