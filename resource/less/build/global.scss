@@ -52,7 +52,7 @@ sub{vertical-align:text-bottom}
 	bottom:0;
 	left:0;
 	right:0;
-	overflow:auto;
+	overflow:hidden;
 	z-index: 1000;
 	&.jx-view__hidden{
 		transform: translate3d(100%,0,0);

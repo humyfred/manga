@@ -8,23 +8,15 @@ import { initLoadingState, loadData } from './cartoon-card-list-action.js'
 class CartoonCardList extends Component {
 
   componentWillMount(){
-    setTimeout(function(){
-      new dropdownLoading({
-        target: document.querySelector('#cartoon'),
-        loading:function(){
-          var self = this;
-          setTimeout(function(){
-            console.log(1);
-            self.recover(s);
-          },3000);
-        }
-      });
-    },0)
     loadData(this.props);
     Object.assign(this,initLoadingState(this.props));
   }
   componentWillReceiveProps(props){
     Object.assign(this,initLoadingState(props));
+  }
+
+  componentDidMount(){
+
   }
 
   render(){
