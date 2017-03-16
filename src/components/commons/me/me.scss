@@ -1,0 +1,25 @@
+.jx-me{
+  padding: 10px 0;
+  text-align: center;;
+  .jx-me__avator{
+    margin: 20px 0;
+    img{
+      width: 86px;
+      height: 86px;
+      border-radius: 50%;
+    }
+  }
+
+  .jx-me__name{
+    font-size: 20px;
+  }
+
+  .jx-me__autograph{
+    margin-top: 15px;
+    color: #99A9BF;
+  }
+
+  .jx-me__action{
+    margin-top: 15px;
+  }
+}
