@@ -1,13 +1,11 @@
 var path = require('path')
 var webpack = require('webpack')
-var webpack_base = require('./webpack.base.config')
-var merge = require('webpack-merge')
 
-module.exports = merge(webpack_base, {
+module.exports = {
   devtool: 'cheap-module-eval-source-map',
   entry: [
     'webpack-hot-middleware/client',
-    './index',
+    './src/index',
     // 'common.js'
   ],
   output: {
@@ -26,19 +24,6 @@ module.exports = merge(webpack_base, {
       // path.join(__dirname, "bower_components")
     ]
   },
-  plugins: [
-    new webpack.DefinePlugin({
-            'process.env': config.dev.env
-        }),
-    new webpack.optimize.OccurenceOrderPlugin(),
-    new webpack.HotModuleReplacementPlugin(),
-    new HtmlWebpackPlugin({
-            filename: 'index.html',
-            template: 'index.html',
-            favicon: 'favicon.ico',
-            inject: true
-        })
-  ],
   module: {
     loaders: [{
       test: /\.js$/,
@@ -66,4 +51,4 @@ module.exports = merge(webpack_base, {
   postcss: function() {
     return [precss, autoprefixer];
   }
-})
+}
