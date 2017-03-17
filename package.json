@@ -44,8 +44,9 @@
     "webpack-hot-middleware": "^2.9.1"
   },
   "scripts": {
+    "dev" : "node build/dev-server.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node build/build.js"
   },
   "repository": {
     "type": "git",
