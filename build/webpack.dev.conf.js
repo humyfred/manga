@@ -11,6 +11,7 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 // })
 
 webpack_base.entry.push('webpack-hot-middleware/client');
+webpack_base.entry.push('webpack/hot/dev-server');
 
 var base = merge(webpack_base, {
   devtool: 'cheap-module-eval-source-map',
