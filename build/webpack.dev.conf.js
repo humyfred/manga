@@ -14,7 +14,7 @@ webpack_base.entry.push('webpack-hot-middleware/client');
 webpack_base.entry.push('webpack/hot/dev-server');
 
 var base = merge(webpack_base, {
-  devtool: 'cheap-module-eval-source-map',
+  devtool: '#eval-source-map',
   module: {},
   output: {
     path: config.dev.assetsRoot, //文件输出目录
