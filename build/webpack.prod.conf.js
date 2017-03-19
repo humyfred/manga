@@ -10,8 +10,9 @@ var config = require('../config')
 module.exports = merge(webpack_base, {
   output: {
       path: config.build.assetsRoot,
-      filename: path.resolve(config.build.assetsSubDirectory, 'js/[name].js'),
-      chunkFilename: path.resolve(config.build.assetsSubDirectory, 'js/[name].[chunkhash].min.js')
+      filename: path.join(config.build.assetsSubDirectory, '/js/[name].js'),
+      chunkFilename: path.join(config.build.assetsSubDirectory, '/js/[name].[chunkhash].min.js'),
+      publicPath: config.build.assetsPublicPath  //用于配置文件发布路径，如CDN或本地服务器
   },
   plugins: [
     new webpack.DefinePlugin({

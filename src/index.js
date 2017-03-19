@@ -14,12 +14,12 @@ import './resource/less/build/global.scss'
 
 const loggerMiddleware = createLogger()
 
-const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;//redux-devtool-extension
+//const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;//redux-devtool-extension
 
-let store = createStore(reducers, composeEnhancers ( applyMiddleware(
+let store = createStore(reducers, applyMiddleware(
   thunkMiddleware,// 允许我们 dispatch() 函数
   loggerMiddleware // 一个很便捷的 middleware，用来打印 action 日志
-)))
+))
 
 // Create an enhanced history that syncs navigation events with the store
 const history = syncHistoryWithStore(browserHistory, store)

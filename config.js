@@ -3,16 +3,16 @@ module.exports = {
 
   build : {
     env : { NODE_ENV : 'production' },
-    assetsRoot : path.resolve(__dirname, '../dist/'),
+    assetsRoot : path.resolve(__dirname, 'dist'),
     assetsSubDirectory : 'static',
-    assetsPublicPath : '/dist/'
+    assetsPublicPath : '/dist'
   },
 
   dev : {
-    env : { NODE_ENV : 'dev' },
+    env : { NODE_ENV : 'development' },
     port : 8088,
-    assetsRoot : path.resolve(__dirname, '../dist/'),
+    assetsRoot : path.resolve(__dirname, 'dist'),
     assetsSubDirectory : 'static',
-    assetsPublicPath : '/dist/'
+    assetsPublicPath : '/dist'
   }
 }
