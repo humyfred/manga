@@ -19,25 +19,25 @@ module.exports = {
   module: {
     loaders: [{
       test: /\.js$/,
-      loaders: ['babel'],
+      loader: 'babel',
       exclude: /node_modules/,
-      include: path.join(__dirname, 'src')
+      include: path.join(__dirname, '../src')
     },{
       test: /\.css$/,
       loader: 'style!css',
       exclude: /node_modules/,
-      include: path.join(__dirname, 'src/resource/css')
+      include: path.join(__dirname, '../src/resource/css')
     },
     {
       test: /\.scss$/,
-      loader: "style-loader!css-loader!sass-loader",
+      loader: "style!css!sass",
       exclude: /node_modules/,
-      include: path.join(__dirname, 'src'),
+      include: path.join(__dirname, '../src'),
     },{
       test: /\.less$/i,
-      loader: "style-loader!css-loader!less-loader",
+      loader: "style!css!less",
       exclude: /node_modules/,
-      include: path.join(__dirname, 'src/resource/less')
+      include: path.join(__dirname, '../src/resource/less')
     }]
   },
   postcss: function() {

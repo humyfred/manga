@@ -36,9 +36,9 @@ app.use(webpackDevMiddleware(compiler, { noInfo: true, publicPath: webpackConfig
 app.use(webpackHotMiddleware(compiler))
 
 
-app.use('/', express.static(path.join(__dirname,'../dist/')));
+app.use('/', express.static(path.join(__dirname,'../dist/static')));
 
-app.use(express.static(path.join(__dirname,'./dist/index.html')));
+app.use(express.static(path.join(__dirname,'../dist')));
 
 app.listen(app.get('port'), function() {
   console.log('Server started: http://localhost:' + app.get('port') + '');
