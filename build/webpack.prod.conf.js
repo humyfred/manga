@@ -14,9 +14,12 @@ module.exports = merge(webpack_base, {
       chunkFilename: path.join(config.build.assetsSubDirectory, '/js/[name].[chunkhash].min.js'),
       publicPath: config.build.assetsPublicPath  //用于配置文件发布路径，如CDN或本地服务器
   },
+  module: {},
   plugins: [
     new webpack.DefinePlugin({
-        'process.env': config.build.env
+      "process.env": {
+        NODE_ENV: JSON.stringify("production")
+      }
     }),
     new webpack.optimize.UglifyJsPlugin({
         compress: {

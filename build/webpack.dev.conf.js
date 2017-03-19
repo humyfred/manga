@@ -12,17 +12,20 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 webpack_base.entry.push('webpack-hot-middleware/client');
 
-module.exports = merge(webpack_base, {
+var base = merge(webpack_base, {
   devtool: 'cheap-module-eval-source-map',
+  module: {},
   output: {
     path: config.dev.assetsRoot, //文件输出目录
     filename: path.join(config.dev.assetsSubDirectory, '/js/[name].js'), //根据入口文件输出的对应多个文件名
-    publicPath: '/' //用于配置文件发布路径，如CDN或本地服务器
+    publicPath: config.dev.assetsPublicPath //用于配置文件发布路径，如CDN或本地服务器
   },
   plugins: [
     new webpack.DefinePlugin({
-            'process.env': config.dev.env
-        }),
+      "process.env": {
+        NODE_ENV: JSON.stringify("development")
+      }
+    }),
     //new webpack.NoErrorsPlugin(),
     new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.HotModuleReplacementPlugin(),
@@ -36,4 +39,8 @@ module.exports = merge(webpack_base, {
   postcss: function() {
     return [precss, autoprefixer];
   }
-})
+});
+
+console.log(JSON.parse(JSON.stringify(base.module)));
+
+module.exports = base;

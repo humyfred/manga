@@ -5,7 +5,7 @@ module.exports = {
     env : { NODE_ENV : 'production' },
     assetsRoot : path.resolve(__dirname, 'dist'),
     assetsSubDirectory : 'static',
-    assetsPublicPath : '/dist'
+    assetsPublicPath : '/'
   },
 
   dev : {
@@ -13,6 +13,6 @@ module.exports = {
     port : 8088,
     assetsRoot : path.resolve(__dirname, 'dist'),
     assetsSubDirectory : 'static',
-    assetsPublicPath : '/dist'
+    assetsPublicPath : '/'
   }
 }
