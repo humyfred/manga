@@ -15,14 +15,14 @@ process.env.NODE_ENV = config.dev.env.NODE_ENV
 process.env.PORT = config.dev.port
 
 // force page reload when html-webpack-plugin template changes
-compiler.plugin('compilation', function(compilation) {
-  compilation.plugin('html-webpack-plugin-after-emit', function(data, cb) {
-    webpackHotMiddleware.publish({
-        action: 'reload'
-    })
-    cb()
-  })
-})
+// compiler.plugin('compilation', function(compilation) {
+//   compilation.plugin('html-webpack-plugin-after-emit', function(data, cb) {
+//     webpackHotMiddleware.publish({
+//         action: 'reload'
+//     })
+//     cb()
+//   })
+// })
 
 app.set('port', (process.env.PORT || 9999));
 app.use(bodyParser.json());
@@ -36,7 +36,9 @@ app.use(webpackDevMiddleware(compiler, { noInfo: true, publicPath: webpackConfig
 app.use(webpackHotMiddleware(compiler))
 
 
-app.use('/', express.static(path.join(__dirname,'./dist/')));
+app.use('/', express.static(path.join(__dirname,'../dist/')));
+
+app.use(express.static(path.join(__dirname,'./dist/index.html')));
 
 app.listen(app.get('port'), function() {
   console.log('Server started: http://localhost:' + app.get('port') + '');
