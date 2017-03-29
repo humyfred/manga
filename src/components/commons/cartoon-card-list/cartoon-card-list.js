@@ -23,7 +23,7 @@ class CartoonCardList extends Component {
 
   render(){
     return (
-      <section  className={this.props.indexViewState+' jx-bottom-50'} >
+      <section  className={this.props.indexViewState + ' jx-bottom-50'} >
         <div id="cartoon">
         {this.props.CartoonCards.map(cartoonCard =>
           <CartoonCard
