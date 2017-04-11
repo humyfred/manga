@@ -42,6 +42,4 @@ var base = merge(webpack_base, {
   }
 });
 
-console.log(JSON.parse(JSON.stringify(base.module)));
-
 module.exports = base;
