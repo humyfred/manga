@@ -57,9 +57,11 @@ class CartoonCardList extends Component {
   }
 
   componentWillMount(){
+    init();
     loadData(this.props);
     Object.assign(this,initLoadingState(this.props));
   }
+
   componentWillReceiveProps(props){
     Object.assign(this,initLoadingState(props));
   }
