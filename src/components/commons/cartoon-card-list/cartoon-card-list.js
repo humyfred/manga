@@ -46,13 +46,13 @@ class CartoonCardList extends Component {
     function mockRequest(at) {
      pull_refresh.classList.add("refreshing");
      setTimeout(function () {
-         
+
      }, 500);
    }
   }
 
   componentWillMount(){
-    init();
+    this.init();
     loadData(this.props);
     Object.assign(this, initLoadingState(this.props));
   }
