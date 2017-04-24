@@ -11,14 +11,14 @@ class CartoonCardList extends Component {
 
   constructor(prop){
     super(prop);
-
+    this.scroller = document.querySelector('#scroller');
   }
 
   init(){
     new AlloyTouch({
       touch: "#cartoon",//反馈触摸的dom
       vertical: true,//不必需，默认是true代表监听竖直方向touch
-      target: scroller, //运动的对象
+      target: this.scroller, //运动的对象
       property: "translateY",  //被滚动的属性
       initialValue: 0,
       min: window.innerHeight - 45 - 48 - 2000, //不必需,滚动属性的最小值
