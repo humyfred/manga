@@ -27,12 +27,12 @@ class CartoonCardList extends Component {
           pull_refresh.translateY = value;
       },
       touchMove: function (evt, value) {
-          if (value > 70) {
-              //http://caniuse.com/#search=classList
-              arrow.classList.add("arrow_up");
-          } else {
-              arrow.classList.remove("arrow_up");
-          }
+          // if (value > 70) {
+          //     //http://caniuse.com/#search=classList
+          //     arrow.classList.add("arrow_up");
+          // } else {
+          //     arrow.classList.remove("arrow_up");
+          // }
       },
       touchEnd: function (evt, value) {
           if (value > 70) {
