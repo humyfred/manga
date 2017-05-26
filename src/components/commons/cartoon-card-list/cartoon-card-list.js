@@ -11,8 +11,8 @@ class CartoonCardList extends Component {
 
   constructor(prop){
     super(prop);
-    this.init()
-    this.scroller = document.querySelector('#scroller');
+    
+    
   }
 
   init(){
@@ -26,7 +26,7 @@ class CartoonCardList extends Component {
       min: window.innerHeight - 45 - 48 - 2000, //不必需,滚动属性的最小值
       max: 0, //不必需,滚动属性的最大值
       change: function (value) {
-          pull_refresh.translateY = value;
+          //pull_refresh.translateY = value;
       },
       touchMove: function (evt, value) {
           // if (value > 70) {
@@ -37,20 +37,20 @@ class CartoonCardList extends Component {
           // }
       },
       touchEnd: function (evt, value) {
-          if (value > 70) {
-              this.to(60);
-              loadCartoon(this);
-              return false;
-          }
+          // if (value > 70) {
+          //     this.to(60);
+          //     loadCartoon(this);
+          //     return false;
+          // }
       }
     });
 
-    function mockRequest(at) {
-     pull_refresh.classList.add("refreshing");
-     setTimeout(function () {
+   //  function mockRequest(at) {
+   //   pull_refresh.classList.add("refreshing");
+   //   setTimeout(function () {
   
-     }, 500);
-   }
+   //   }, 500);
+   // }
   }
 
   componentWillReceiveProps(props){
@@ -58,6 +58,7 @@ class CartoonCardList extends Component {
   }
 
   componentDidMount(){
+     //this.scroller = document.querySelector('.jx-view-wrap');
      //this.init();
     loadData(this.props);
     Object.assign(this, initLoadingState(this.props));
