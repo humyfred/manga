@@ -10,10 +10,10 @@ class ContentWrap extends Component {
   constructor(props){
     super(props);
   }
-  componentWillMount(){
+  componentDidMount(){
     Object.assign(this,initLoadingState(this.props));
   }
-  componentWillUpdate(){
+  componentDidUpdate(){
     Object.assign(this,initLoadingState(this.props));
   }
 

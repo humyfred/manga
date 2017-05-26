@@ -6,7 +6,7 @@ import { initLoadingState , loadData } from './post-list-action.js'
 
 class PostList extends Component {
 
-  componentWillMount(){
+  componentDidMount(){
     Object.assign(this,loadData(this.props));
     Object.assign(this,initLoadingState(this.props));
   }
