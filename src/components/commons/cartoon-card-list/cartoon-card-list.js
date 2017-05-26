@@ -11,10 +11,12 @@ class CartoonCardList extends Component {
 
   constructor(prop){
     super(prop);
+    this.init()
     this.scroller = document.querySelector('#scroller');
   }
 
   init(){
+    console.log('start touch')
     new AlloyTouch({
       touch: "#cartoon",//反馈触摸的dom
       vertical: true,//不必需，默认是true代表监听竖直方向touch
@@ -51,18 +53,14 @@ class CartoonCardList extends Component {
    }
   }
 
-  componentWillMount(){
-    //this.init();
-    loadData(this.props);
-    Object.assign(this, initLoadingState(this.props));
-  }
-
   componentWillReceiveProps(props){
     Object.assign(this, initLoadingState(props));
   }
 
   componentDidMount(){
-
+     //this.init();
+    loadData(this.props);
+    Object.assign(this, initLoadingState(this.props));
   }
 
   render(){
