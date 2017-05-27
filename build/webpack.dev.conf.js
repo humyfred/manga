@@ -27,6 +27,8 @@ var base = merge(webpack_base, {
         NODE_ENV: JSON.stringify("development")
       }
     }),
+
+
     //new webpack.NoErrorsPlugin(),
     new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.HotModuleReplacementPlugin(),
