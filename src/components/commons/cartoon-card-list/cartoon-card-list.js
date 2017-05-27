@@ -9,8 +9,8 @@ import Transform from '../../../plugins/transform.js'
 
 class CartoonCardList extends Component {
 
-  constructor(prop){
-    super(prop);
+  constructor(props){
+    super(props);
     
     
   }
@@ -54,14 +54,22 @@ class CartoonCardList extends Component {
   }
 
   componentWillReceiveProps(props){
-    Object.assign(this, initLoadingState(props));
+    
+  }
+
+  shouldComponentUpdate(nextProps, nextState) {
+    if(this.props === nextProps){
+      return false;
+    }
+    return true
   }
 
   componentDidMount(){
-     //this.scroller = document.querySelector('.jx-view-wrap');
-     //this.init();
-    loadData(this.props);
-    Object.assign(this, initLoadingState(this.props));
+    loadData(this);
+  }
+
+  componentDidUpdate(){
+    loadData(this);
   }
 
   render(){
