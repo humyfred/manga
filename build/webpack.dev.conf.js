@@ -27,16 +27,11 @@ var base = merge(webpack_base, {
         NODE_ENV: JSON.stringify("development")
       }
     }),
-
-
     //new webpack.NoErrorsPlugin(),
     new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.HotModuleReplacementPlugin(),
     new HtmlWebpackPlugin({
-            filename: 'index.html',
-            template: 'index.html',
-            favicon: 'favicon.ico',
-            inject: true
+            filename: 'index.html',template: 'index.html',favicon: 'favicon.ico', inject: true
         })
   ],
   postcss: function() {

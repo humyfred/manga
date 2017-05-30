@@ -29,8 +29,7 @@ module.exports = {
       loader: 'style!css',
       exclude: /node_modules/,
       include: path.join(__dirname, '../src/resource/css')
-    },
-    {
+    },{
       test: /\.scss$/,
       loader: "style!css!sass",
       exclude: /node_modules/,
