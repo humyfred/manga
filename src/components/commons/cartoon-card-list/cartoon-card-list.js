@@ -5,7 +5,6 @@ import Loading from '../Loading/Loading'
 import { initLoadingState, loadData, loadCartoon } from './cartoon-card-list-action.js'
 import AlloyTouch from '../../../plugins/alloy_touch.css.js'
 import Transform from '../../../plugins/transform.js'
-//import DropdownLoading from '../dropdown-loading/dropdown-loading'
 
 class CartoonCardList extends Component {
 
