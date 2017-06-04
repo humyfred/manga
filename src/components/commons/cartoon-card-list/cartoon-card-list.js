@@ -43,13 +43,6 @@ class CartoonCardList extends Component {
           // }
       }
     });
-
-   //  function mockRequest(at) {
-   //   pull_refresh.classList.add("refreshing");
-   //   setTimeout(function () {
-  
-   //   }, 500);
-   // }
   }
 
   componentWillReceiveProps(props){
