@@ -25,7 +25,9 @@ class CartoonCardList extends Component {
       min: window.innerHeight - 45 - 48 - 2000, //不必需,滚动属性的最小值
       max: 0, //不必需,滚动属性的最大值
       change: function (value) {
+        
           //pull_refresh.translateY = value;
+
       },
       touchMove: function (evt, value) {
           // if (value > 70) {
