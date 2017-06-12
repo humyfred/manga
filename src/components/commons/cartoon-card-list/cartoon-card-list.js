@@ -15,7 +15,7 @@ class CartoonCardList extends Component {
   }
 
   init(){
-    console.log('start touch')
+  
     new AlloyTouch({
       touch: "#cartoon",//反馈触摸的dom
       vertical: true,//不必需，默认是true代表监听竖直方向touch
