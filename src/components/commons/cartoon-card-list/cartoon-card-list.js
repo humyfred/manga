@@ -25,24 +25,14 @@ class CartoonCardList extends Component {
       min: window.innerHeight - 45 - 48 - 2000, //不必需,滚动属性的最小值
       max: 0, //不必需,滚动属性的最大值
       change: function (value) {
-        
-          //pull_refresh.translateY = value;
+       
 
       },
       touchMove: function (evt, value) {
-          // if (value > 70) {
-          //     //http://caniuse.com/#search=classList
-          //     arrow.classList.add("arrow_up");
-          // } else {
-          //     arrow.classList.remove("arrow_up");
-          // }
+        
       },
       touchEnd: function (evt, value) {
-          // if (value > 70) {
-          //     this.to(60);
-          //     loadCartoon(this);
-          //     return false;
-          // }
+          
       }
     });
   }
