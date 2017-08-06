@@ -1,1 +1,8 @@
 node_modules
+dist/static/js/main.js
+dist/static/js/manifest.js
+dist/static/js/vendor.js
+dist/index.html
+dist/favicon.ico
+dist/static/vendor.dll.js
+dist/static/manifest.json
