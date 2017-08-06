@@ -9,6 +9,9 @@
 # install dependencies
 npm install
 
+# create a dll-only-bundle before run app 
+npm run dll
+
 # serve with hot reload at localhost:8088
 npm run dev
 
