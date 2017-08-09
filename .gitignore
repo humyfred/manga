@@ -1,4 +1,6 @@
 node_modules
+.jsbeautifyrc
+.jshintrc
 dist/static/js/main.js
 dist/static/js/manifest.js
 dist/static/js/vendor.js
