@@ -6,7 +6,7 @@ import CartoonCards from '../../components/commons/cartoon-card-list/cartoon-car
 import { browserHistory } from 'react-router'
 
 
-
+ 
 const mapStateToProps = (state) => {
     return {
         CartoonCards: state.cartoonCardList.items,
